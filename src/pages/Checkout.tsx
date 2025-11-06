@@ -59,6 +59,8 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
       //await addDoc(collection(db, "payments"), paymentData);
       const orderId = await placeOrder();
       console.log("Order ID is:", orderId);
+      navigate("/order-confirmation", { state: { orderId } });
+      clearCart();
       
       if (!orderId) return;
 
@@ -75,9 +77,6 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
       });
       console.log('Order details updated');
 
-      navigate("/order-confirmation", { state: { orderId } });
-      clearCart();
-      
       //Send Email Confirmation
       // ✅ Fetch complete order data from Firestore
       const orderSnap = await getDoc(orderRef);
@@ -213,6 +212,8 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
                 // 3️⃣ Place order AFTER successful payment
                 const orderId = await placeOrder();
                 console.log("✅ Order ID:", orderId);
+                navigate("/order-confirmation", { state: { orderId } });
+                clearCart();
 
                 if (!orderId) return;
 
@@ -230,8 +231,7 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
                 });
 
               console.log('Order Details updated!');
-              navigate("/order-confirmation", { state: { orderId } });
-              clearCart();
+             
 
               //Send Email Confirmation
               // ✅ Fetch complete order data from Firestore
