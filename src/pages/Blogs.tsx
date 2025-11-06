@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchBlogs, Blog } from "../data/firebaseblogs";
 import { motion } from "framer-motion";
+import blogsHardcoded  from '../data/blogs';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -84,6 +85,7 @@ const Blogs = () => {
           </p>
         </div>
 
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {blogs.map((blog, index) => (
             <motion.div
@@ -96,7 +98,7 @@ const Blogs = () => {
             >
               <div className="relative overflow-hidden group rounded-3xl">
                 <img
-                  src={blog.image}
+                  src={blogsHardcoded[index].image}
                   alt={blog.title}
                   className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl"
                 />
