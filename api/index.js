@@ -17,7 +17,7 @@ const razorpay = new Razorpay({
 });
 
 // 🪙 Create order
-app.post("/create-order", async (req, res) => {
+app.post("/api/create-order", async (req, res) => {
   const { amount, currency } = req.body;
 
   // Input validation (highly recommended in production)
@@ -41,7 +41,7 @@ app.post("/create-order", async (req, res) => {
 });
 
 // 🧾 Verify payment signature (new route)
-app.post("/verify-payment", (req, res) => {
+app.post("/api/verify-payment", (req, res) => {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
