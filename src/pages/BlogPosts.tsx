@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import parse, { domToReact } from "html-react-parser";
 import { fetchBlogs, Blog } from "../data/firebaseblogs";
 import { motion } from "framer-motion";
+import blogsHardcoded from '../data/blogs';
 
 // Import blog assets
 import microClustering from "../assets/microClustering.png";
@@ -26,6 +27,9 @@ const BlogPosts = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Blog | null>(null);
+
+  const blogHardcoded = blogsHardcoded.find((b) => b.slug === slug);
+  
 
   useEffect(() => {
     const loadBlogs = async () => {
@@ -89,6 +93,18 @@ const BlogPosts = () => {
     );
   }
 
+  // ❌ Blog not found (after loading)
+  if (!blogHardcoded) {
+    return (
+      <div className="py-32 text-center text-slate-700">
+        <h2 className="text-3xl font-light mb-4">Blog Not Found</h2>
+        <Link to="/blogs" className="text-blue-600 font-medium hover:text-blue-900">
+          ← Back to Blogs
+        </Link>
+      </div>
+    );
+  }
+
   // ✅ Blog found — smooth fade-in
   return (
     <>
@@ -117,7 +133,7 @@ const BlogPosts = () => {
       >
         <div className="container mx-auto px-4 max-w-4xl">
           <img
-            src={blog.image}
+            src={blogHardcoded.image}
             alt={blog.title}
             className="w-full h-auto rounded-3xl object-cover mb-10"
           />
