@@ -31,11 +31,6 @@ const Testimonials = () => {
                     </p>
                   </div>
                   <div className="flex items-center mt-auto">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover mr-4"
-                    />
                     <div>
                       <h4 className="font-semibold text-slate-900">{testimonial.name}</h4>
                       <p className="text-slate-500 text-sm">{testimonial.location}</p>
