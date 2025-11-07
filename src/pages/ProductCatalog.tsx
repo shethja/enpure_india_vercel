@@ -60,36 +60,50 @@ const ProductCatalog = () => {
   }, []);
   
 
-  const filteredAndSortedProducts = useMemo(() => {
-    let filtered = products.filter((product) => {
-      const matchesSearch =
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-      const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
-      return matchesSearch && matchesCategory && matchesPrice;
-    });
+const filteredAndSortedProducts = useMemo(() => {
+  const categoryOrder = {
+    'alkaline-ionizer': 1,
+    'ro-uv-uf-alkaline': 2,
+    'commercial': 3,
+  };
 
-    // Sort products
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'name':
-          return a.name.localeCompare(b.name);
-        case 'price-low':
-          return a.price - b.price;
-        case 'price-high':
-          return b.price - a.price;
-        case 'rating':
-          const aRating = ratingsData[a.id]?.avg || 0;
-          const bRating = ratingsData[b.id]?.avg || 0;
-          return bRating - aRating;
-        default:
-          return 0;
-      }
-    });
+  let filtered = products.filter((product) => {
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === 'all' || product.category === selectedCategory;
+    const matchesPrice =
+      product.price >= priceRange[0] && product.price <= priceRange[1];
+    return matchesSearch && matchesCategory && matchesPrice;
+  });
 
-    return filtered;
-  }, [searchTerm, selectedCategory, priceRange, sortBy, ratingsData]);
+  // Sort products
+  filtered.sort((a, b) => {
+    // Primary: category order (ionizers → purifiers → commercial)
+    const aOrder = categoryOrder[a.category] || 999;
+    const bOrder = categoryOrder[b.category] || 999;
+    if (aOrder !== bOrder) return aOrder - bOrder;
+
+    // Secondary: sortBy option
+    switch (sortBy) {
+      case 'name':
+        return a.name.localeCompare(b.name);
+      case 'price-low':
+        return a.price - b.price;
+      case 'price-high':
+        return b.price - a.price;
+      case 'rating':
+        const aRating = ratingsData[a.id]?.avg || 0;
+        const bRating = ratingsData[b.id]?.avg || 0;
+        return bRating - aRating;
+      default:
+        return 0;
+    }
+  });
+
+  return filtered;
+}, [searchTerm, selectedCategory, priceRange, sortBy, ratingsData]);
 
 
   return (
