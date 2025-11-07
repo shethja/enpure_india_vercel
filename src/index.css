@@ -329,14 +329,14 @@ section.py-32.bg-slate-900 h2 {
   }
 }
 
-@media (min-width: 1030px) and (max-width: 1170px) {
+@media (min-width: 1090px) and (max-width: 1170px) {
   header {
     max-width: 95% !important;
     padding: 0 1rem !important;
   }
 }
 
-@media (min-width: 1030px) and (max-width: 1090px) {
+@media (min-width: 1020px) and (max-width: 1090px) {
   header {
     max-width: 97% !important;
     padding: 0 0.75rem !important;

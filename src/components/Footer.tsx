@@ -12,7 +12,8 @@ const Footer = () => {
     <AnimatedSection direction='up' delay={0.2}>
     <footer className="bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-2 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32">
+        {/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32">*/}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 lg:gap-24 xl:gap-32">
           {/* Company Info */}
           <div className="space-y-6">
               {/* Logo */}
@@ -109,7 +110,8 @@ const Footer = () => {
             </ul>
           </div>
           {/* Contact Info */}
-          <div className="space-y-6 px-0 lg:px-20">
+          {/*<div className="space-y-6 px-0 lg:px-20">*/}
+          <div className="space-y-6 px-0 md:px-8 lg:px-12 xl:px-20">
             <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
@@ -144,6 +146,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          {/*<div className="flex flex-col md:flex-row md:flex-wrap justify-between items-center gap-4 text-center md:text-left">*/}
             <p className="text-slate-500 text-sm">
               © 2024 Enpure. All rights reserved.
             </p>
@@ -151,7 +154,8 @@ const Footer = () => {
                   alt="Enpure-logo"
                   className="w-20 md:w-24 h-20 object-contain"
             />
-            <div className="grid grid-cols-2 sm:flex sm:space-x-6 gap-3 sm:gap-0">
+            {/*<div className="grid grid-cols-2 sm:flex sm:space-x-6 gap-3 sm:gap-0">*/}
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 place-items-center">
               <Link to="/privacy-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm text-center sm:text-left">
                 Privacy Policy
               </Link>
