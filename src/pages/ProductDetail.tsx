@@ -484,7 +484,7 @@ const onTouchEnd = () => {
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h3>
                   <ul className="space-y-2">
-                    {product.features.slice(0, 4).map((feature, index) => (
+                    {product.features.slice(0, 5).map((feature, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{feature}</span>

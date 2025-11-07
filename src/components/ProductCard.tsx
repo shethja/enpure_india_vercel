@@ -106,7 +106,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             loading="lazy"
             srcSet={`${product.image} 1x, ${product.image} 2x`}
           />
-          {product.originalPrice && (
+          {product.originalPrice && Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)>0 && (
             <div className="absolute top-6 left-6 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
               {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
             </div>
@@ -115,7 +115,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
         
         <div className="p-8">
-          <h3 className="text-xl font-light text-gray-900 mb-3 line-clamp-2 leading-tight">
+          <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">
             {product.name}
           </h3>
           
@@ -137,7 +137,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           </div>
 
-          <p className="text-gray-600 text-base mb-6 line-clamp-2 leading-relaxed font-light">
+          <p className="text-gray-600 text-base mb-6 line-clamp-2 leading-relaxed font-medium">
             {product.description}
           </p>
 
