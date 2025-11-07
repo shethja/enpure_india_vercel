@@ -110,11 +110,10 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
         payment_method: orderData.paymentMethod || "N/A",
         installation_date: orderData.installationDate || "N/A",
         installation_time: orderData.installationTime || "N/A",
-        shipping_address:
-          orderData.shippingInfo?.address ||
-          `${orderData.shippingInfo?.street || ""}, ${
-            orderData.shippingInfo?.city || ""
-          }`,
+        shipping_address:shippingInfo.address,
+        city: shippingInfo.city,
+        state: shippingInfo.state,
+        pincode: shippingInfo.pincode,
         subtotal: (orderData.total - orderData.tax).toFixed(2),
         tax: orderData.tax.toFixed(2),
         total: orderData.total.toFixed(2),
@@ -266,11 +265,10 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
                 payment_method: orderData.paymentMethod || "N/A",
                 installation_date: orderData.installationDate || "N/A",
                 installation_time: orderData.installationTime || "N/A",
-                shipping_address:
-                  orderData.shippingInfo?.address ||
-                  `${orderData.shippingInfo?.street || ""}, ${
-                    orderData.shippingInfo?.city || ""
-                  }`,
+                shipping_address:shippingInfo.address,
+                city: shippingInfo.city,
+                state: shippingInfo.state,
+                pincode: shippingInfo.pincode,
                 subtotal: (orderData.total - orderData.tax).toFixed(2),
                 tax: orderData.tax.toFixed(2),
                 total: orderData.total.toFixed(2),
