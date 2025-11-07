@@ -20,7 +20,7 @@ return (
             
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">1.1 Acceptance of Terms</h3>
             <p className="text-gray-900 leading-relaxed mb-4">
-              By using this website (www.enpure.com), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions, along with our Privacy Policy.
+              By using this website ("https://enpure.in"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions, along with our Privacy Policy.
             </p>
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">1.2 Eligibility</h3>
@@ -69,8 +69,8 @@ return (
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">3.2 Payment Methods</h3>
             <p className="text-gray-900 leading-relaxed mb-3">We accept the following payment methods:</p>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
-              <li>Credit/Debit Cards (Visa, Mastercard, RuPay)</li>
-              <li>UPI (Google Pay, PhonePe, Paytm)</li>
+              <li>Credit/Debit Cards (Visa, Mastercard, RuPay, etc.)</li>
+              <li>UPI (Google Pay, PhonePe, Paytm, etc.)</li>
               <li>Net Banking</li>
               <li>Cash on Delivery (COD) - subject to location availability</li>
             </ul>
@@ -94,11 +94,12 @@ return (
               <li>Standard delivery: 5-7 business days from order confirmation</li>
               <li>Remote areas may require additional time</li>
               <li>Delivery times are estimates and not guaranteed</li>
+              <li>Check details on our Shipping Policy page</li>
             </ul>
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">4.2 Shipping Charges</h3>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
-              <li>Free shipping on all water purifiers across India</li>
+              <li>Free shipping on all products including pHydrafyt ionizers across India</li>
               <li>Delivery charges may apply for certain remote locations</li>
             </ul>
 
@@ -155,8 +156,8 @@ return (
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">6.1 Product Warranty</h3>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
               <li>All products come with a manufacturer's warranty as specified in the product description</li>
-              <li>Standard warranty period: 1-2 years depending on the product</li>
-              <li>Warranty covers manufacturing defects and functional issues</li>
+              <li>Standard warranty period: 1 year for water purifiers and 5 years for pHydrafyt ionizers</li>
+              <li>Warranty covers manufacturing defects and functional issues (Filters for both water purifiers and ionizers not covered under warranty)</li>
             </ul>
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">6.2 Warranty Exclusions</h3>
@@ -181,7 +182,7 @@ return (
             
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">7.1 Return Policy</h3>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
-              <li>Products can be returned within 7 days of delivery</li>
+              <li>Products can be returned within 10 days of delivery</li>
               <li>Products must be unused, in original packaging with all accessories</li>
               <li>Installation must not have been completed</li>
             </ul>
@@ -189,7 +190,7 @@ return (
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">7.2 Return Process</h3>
             <p className="text-gray-900 leading-relaxed mb-3">To initiate a return:</p>
             <ol className="list-decimal pl-6 mb-4 text-gray-900 space-y-2">
-              <li>Contact customer support within 7 days of delivery</li>
+              <li>Contact customer support within 10 days of delivery</li>
               <li>Provide order details and reason for return</li>
               <li>Our team will arrange product pickup</li>
               <li>Refund will be processed after inspection</li>
@@ -197,9 +198,9 @@ return (
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">7.3 Refund Processing</h3>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
-              <li>Refunds will be processed within 7-10 business days of receiving the returned product</li>
+              <li>Refunds will be processed within 5-7 business days of receiving the returned product</li>
               <li>Refund will be credited to the original payment method</li>
-              <li>Shipping charges (if any) are non-refundable</li>
+              <li>Shipping charges for return products without any valid reason will be charged (approx. ₹800 - ₹1000)</li>
             </ul>
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">7.4 Non-Returnable Items</h3>
