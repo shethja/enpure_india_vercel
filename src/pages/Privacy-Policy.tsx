@@ -375,7 +375,7 @@ return (
                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                     <h3 className="text-lg font-semibold text-blue-900 mb-4">Privacy Questions</h3>
                     <p className="text-gray-700 mb-2">For questions about this Privacy Policy or our privacy practices:</p>
-                    <p className="text-gray-700"><strong>Email:</strong> privacy@enpure.com</p>
+                    <p className="text-gray-700"><strong>Email:</strong> info@enpure.in</p>
                     <p className="text-gray-700"><strong>Phone:</strong> +91-70160 38671</p>
                     <p className="text-gray-700"><strong>Address:</strong> DiHydro Tech Innovations, Surat, Gujarat, India</p>
                     </div>
@@ -383,14 +383,14 @@ return (
                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                     <h3 className="text-lg font-semibold text-blue-900 mb-4">Data Protection Officer</h3>
                     <p className="text-gray-700 mb-2">For GDPR-related inquiries:</p>
-                    <p className="text-gray-700"><strong>Email:</strong> dpo@enpure.com</p>
+                    <p className="text-gray-700"><strong>Email:</strong> info@enpure.in</p>
                     </div>
 
                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                     <h3 className="text-lg font-semibold text-blue-900 mb-4">Privacy Rights Requests</h3>
                     <p className="text-gray-700 mb-3">To exercise your privacy rights:</p>
                     <ol className="list-decimal pl-6 text-gray-700 space-y-2">
-                        <li>Email your request to privacy@enpure.com</li>
+                        <li>Email your request to info@enpure.in</li>
                         <li>Include your full name, email, and order number (if applicable)</li>
                         <li>Specify the right you wish to exercise</li>
                         <li>We will respond within 30 days</li>
@@ -400,7 +400,7 @@ return (
                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                     <h3 className="text-lg font-semibold text-blue-900 mb-4">Customer Support</h3>
                     <p className="text-gray-700 mb-2">For general inquiries:</p>
-                    <p className="text-gray-700"><strong>Email:</strong> support@enpure.com</p>
+                    <p className="text-gray-700"><strong>Email:</strong> info@enpure.in</p>
                     <p className="text-gray-700"><strong>Hours:</strong> Monday to Saturday, 9:00 AM - 6:00 PM IST</p>
                     </div>
 
@@ -410,7 +410,7 @@ return (
                     </p>
                     <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                     <li>Change your password immediately</li>
-                    <li>Contact us at security@enpure.com</li>
+                    <li>Contact us at info@enpure.in</li>
                     <li>Monitor your account for suspicious activity</li>
                     </ul>
 
@@ -425,7 +425,7 @@ return (
 
                     <div className="mt-6 text-center">
                     <p className="text-gray-600 text-sm">
-                        © 2024 Enpure Water Solutions. All rights reserved.
+                        © 2024 Enpure. All rights reserved.
                     </p>
                     </div>
 
