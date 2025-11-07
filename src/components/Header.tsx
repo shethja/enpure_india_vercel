@@ -27,36 +27,51 @@ const Header = () => {
     <>
       {/* Spacer to prevent content from hiding behind floating nav */}
       <div className="h-20"></div>
-      
+
       {/* Floating Navigation Bar */}
-      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-4">
-        <div className="bg-gradient-to-r from-gray-800/60 to-gray-600/40 
-          backdrop-blur-[5px] border border-white/20 
+      {/*<header className="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] md:w-[90%] lg:max-w-6xl transition-all duration-300 px-2 sm:px-4">*/}
+      {/*<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 
+        w-[95%] md:w-[92%] lg:w-[94%] xl:max-w-6xl px-2 sm:px-4 transition-all duration-300">*/}
+      <header
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50
+             w-[97%] sm:w-[95%] md:w-[93%] lg:w-[96%] xl:max-w-6xl
+             px-2 sm:px-3 md:px-4 transition-all duration-300"
+      >
+ 
+        <div className="bg-gradient-to-r from-gray-800/70 to-gray-700/40 
+          backdrop-blur-[8px] border border-white/20 
           shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_32px_rgba(0,0,0,0.25)] 
           rounded-full">
 
-          <div className="flex items-center justify-between h-16 px-6">
+          {/*<div className="flex items-center justify-between h-14 sm:h-16 md:h-20 px-3 sm:px-6">*/}
+          {/*<div className="flex items-center justify-between h-16 px-4 lg:px-5 xl:px-6">*/}
+          <div className="flex items-center justify-between h-16 px-3 md:px-4 lg:px-5 xl:px-6">
+
+            
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-0.5 hover:scale-105 transition-transform duration-300 -mx-4">
-              <div className="w-16 h-16">
+            <Link
+              to="/"
+              className="flex items-center gap-1 hover:scale-105 transition-transform duration-300"
+            >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
                 <img
                   src={dihydroLogo}
                   alt="DiHydro-logo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div className="w-px h-8 bg-gray-300 mx-1" /> {/* Divider Line */}
-              <div className="w-40 h-40 -mx-2">
+              <div className="hidden sm:block w-px h-6 sm:h-8 bg-gray-300 mx-2" />
+              <div className="w-24 sm:w-28 md:w-32 lg:w-36">
                 <img
                   src={enpureLogo}
                   alt="Enpure-logo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
               <NavButton to="/" label="Home" active={location.pathname === '/'} />
               <NavButton to="/products" label="Products" active={location.pathname === '/products'} />
               <NavButton to="/installation" label="Installation" active={location.pathname === '/installation'} />
@@ -67,19 +82,21 @@ const Header = () => {
             </nav>
 
             {/* Right Section */}
-            <div className="flex items-center space-x-2 -mx-4">
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              
               {/* Cart Button */}
-              <Link to="/cart">
-                <ActionButton className="relative modern-button glass-card">
-                  <ShoppingCart className="h-4 w-4"/>
-                  
-                </ActionButton>
+              <div className="relative">
+                <Link to="/cart">
+                  <ActionButton className="relative modern-button glass-card">
+                    <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </ActionButton>
+                </Link>
                 {getTotalItems() > 0 && (
-                    <span className="absolute top-2 right-[100px] sm:right-[30px] md:right-[60px] lg:right-[50px] bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium shadow-lg">
-                      {getTotalItems()}
-                    </span>
-                  )}
-              </Link>
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs rounded-full h-4 w-4 flex items-center justify-center font-medium shadow-lg">
+                    {getTotalItems()}
+                  </span>
+                )}
+              </div>
 
               {/* User Menu */}
               <div className="relative">
@@ -87,9 +104,9 @@ const Header = () => {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-1 modern-button glass-card"
                 >
-                  <User className="h-4 w-4"/>
+                  <User className="h-4 w-4 sm:h-5 sm:w-5" />
                   {isAuthenticated && (
-                    <span className="hidden lg:inline text-xs font-medium max-w-20 truncate">
+                    <span className="hidden md:inline text-xs sm:text-sm font-medium truncate max-w-[80px] text-ellipsis">
                       {user?.name}
                     </span>
                   )}
@@ -97,7 +114,7 @@ const Header = () => {
 
                 {/* User Dropdown */}
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-3 w-56 bg-slate-800/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-600/30 py-2 z-50">
+                  <div className="absolute right-0 mt-3 w-48 sm:w-56 bg-slate-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-600/30 py-2 z-50">
                     {isAuthenticated ? (
                       <>
                         <div className="px-4 py-3 border-b border-slate-600/30">
@@ -134,44 +151,43 @@ const Header = () => {
               {/* Mobile Menu Button */}
               <ActionButton
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden"
+                className="lg:hidden"
               >
-                {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </ActionButton>
             </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 w-full bg-gradient-to-r from-gray-800/60 to-gray-600/40 backdrop-blur-3xl text-white 
-              rounded-3xl shadow-lg flex flex-col items-end py-6 px-8 space-y-10 transition-all duration-300">
-              <nav className="flex flex-col space-y-3 text-right">
-                <MobileNavButton to="/" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/'}>
-                  Home
-                </MobileNavButton>
-                <MobileNavButton to="/products" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/products'}>
-                  Products
-                </MobileNavButton>
-                <MobileNavButton to="/installation" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/installation'}>
-                  Installation
-                </MobileNavButton>
-                <MobileNavButton to="/blogs" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/blogs'}>
-                  Blogs
-                </MobileNavButton>
-                <MobileNavButton to="/about" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/about'}>
-                  About
-                </MobileNavButton>
-                <MobileNavButton to="/contact" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/contact'}>
-                  Contact
-                </MobileNavButton>
-                <MobileNavButton to="/testimonials" onClick={() => setIsMenuOpen(false)} active={location.pathname === '/testimonials'}>
-                  Reviews
-                </MobileNavButton>
+            <div className="absolute top-full left-0 w-full bg-gradient-to-r from-gray-900/90 to-gray-700/80 
+              backdrop-blur-3xl text-white rounded-3xl shadow-lg flex flex-col 
+              items-center py-6 px-6 space-y-4 sm:space-y-5 transition-all duration-300 z-40">
+              <nav className="flex flex-col space-y-3 text-center w-full">
+                {[
+                  { label: "Home", to: "/" },
+                  { label: "Products", to: "/products" },
+                  { label: "Installation", to: "/installation" },
+                  { label: "Blogs", to: "/blogs" },
+                  { label: "About", to: "/about" },
+                  { label: "Contact", to: "/contact" },
+                  { label: "Reviews", to: "/testimonials" },
+                ].map((item) => (
+                  <MobileNavButton
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
+                    active={location.pathname === item.to}
+                  >
+                    {item.label}
+                  </MobileNavButton>
+                ))}
               </nav>
             </div>
           )}
         </div>
       </header>
+
     </>
   );
 };

@@ -151,18 +151,18 @@ const Footer = () => {
                   alt="Enpure-logo"
                   className="w-20 md:w-24 h-20 object-contain"
             />
-            <div className="flex flex-wrap space-x-6">
-              <Link to="/privacy-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm">
-                  Privacy Policy
+            <div className="grid grid-cols-2 sm:flex sm:space-x-6 gap-3 sm:gap-0">
+              <Link to="/privacy-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm text-center sm:text-left">
+                Privacy Policy
               </Link>
-              <Link to="/terms" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm">
-                  Terms and Conditions
+              <Link to="/terms" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm text-center sm:text-left">
+                Terms and Conditions
               </Link>
-              <Link to="/shipping-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm">
-                  Shipping Policy
+              <Link to="/shipping-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm text-center sm:text-left">
+                Shipping Policy
               </Link>
-              <Link to="/return-refund-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm">
-                  Return & Refund Policy
+              <Link to="/return-refund-policy" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm text-center sm:text-left">
+                Return & Refund Policy
               </Link>
             </div>
           </div>
