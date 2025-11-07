@@ -17,6 +17,8 @@ import Profile from './pages/Profile';
 import Orders from './pages/Orders';
 import ForgotPassword from './pages/Forgot-Password';
 import PrivacyPolicy from './pages/Privacy-Policy';
+import ShippingPolicy from './pages/Shipping-Policy';
+import ReturnRefundPolicy from './pages/Return-Refund-Policy';
 import Terms from './pages/Terms';
 import Testimonials from './pages/Testimonials';
 import Installation from './pages/Installation';
@@ -68,6 +70,8 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/order-confirmation" element={<OrderConfirmation />} />
+                <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                <Route path="return-refund-policy" element={<ReturnRefundPolicy />} />
                 {/*<Route path="/uploadProducts" element={<UploadProducts />} /> */}
                 {/*<ToastContainer position="top-center" autoClose={2000} /> */}
               </Routes>
