@@ -751,7 +751,7 @@ const onTouchEnd = () => {
                   value={formData.address}
                   onChange={handleInputChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your address"
+                  placeholder="Enter your full address with City, State and Pincode"
                 />
               </div>
 
