@@ -90,7 +90,7 @@ return (
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">6. How to Request a Replacement or Refund</h2>
                 <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
-                  <li>Email your request to <strong>support@enpure.com</strong> within <strong>10 days</strong> of delivery.</li>
+                  <li>Email your request to <strong>info@enpure.in</strong> or call: <strong>=91-70160 38671</strong> within <strong>10 days</strong> of delivery.</li>
                   <li>Include your order ID, proof of defect (photos or video), and preferred action (replacement/refund).</li>
                   <li>Our team will review your request and provide return pickup details if applicable.</li>
                   <li>Upon receipt and inspection of the returned product, the replacement/refund will be processed.</li>
@@ -117,7 +117,7 @@ return (
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-blue-900 mb-3">Need Help?</h3>
                   <p className="text-gray-700 mb-2">For return or refund assistance, please reach out to our support team:</p>
-                  <p className="text-gray-700"><strong>Email:</strong> support@enpure.com</p>
+                  <p className="text-gray-700"><strong>Email:</strong> info@enpure.in</p>
                   <p className="text-gray-700"><strong>Phone:</strong> +91-70160 38671</p>
                   <p className="text-gray-700"><strong>Address:</strong> DiHydro Tech Innovations, Surat, Gujarat, India</p>
                   <p className="text-gray-700"><strong>Hours:</strong> Monday - Saturday, 9:00 AM - 6:00 PM IST</p>
@@ -136,7 +136,7 @@ return (
                     <strong>ENPURE</strong> — Intelligent Hydration, Effortless Wellness
                   </p>
                   <p className="text-gray-600 text-sm">
-                    © 2024 ENPURE Water Solutions. All rights reserved.
+                    © 2024 ENPURE. All rights reserved.
                   </p>
                 </div>
             
@@ -153,4 +153,6 @@ return (
 
 
 export default ReturnRefundPolicy;
+
+
 

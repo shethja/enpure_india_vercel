@@ -13,7 +13,7 @@ return (
                 </p>
             
                 <p className="text-gray-700 leading-relaxed mb-6 text-justify">
-                  At <em>ENPURE</em> by DiHydro Tech Innovation, we are committed to delivering the pHyDrafyt Pro+ water purifier and ionizer to customers across India. Our shipping services are designed to ensure your product reaches you safely and on time.
+                  At <em>ENPURE</em> by DiHydro Tech Innovation, we are committed to delivering the  Enpure Water Purifiers and pHydrafyt Ionizers to customers across India. Our shipping services are designed to ensure your product reaches you safely and on time.
                 </p>
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">1. Delivery Coverage</h2>
@@ -54,14 +54,14 @@ return (
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">3. Shipping Charges</h2>
                 <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                  <li><strong>Free Shipping:</strong> Available on all orders of pHyDrafyt Pro+ across India</li>
+                  <li><strong>Free Shipping:</strong> Available on all orders of Enpure products including the pHydrafyt Ionizers across India</li>
                   <li><strong>Installation Service:</strong> Professional installation included at no extra charge</li>
                   <li><strong>Remote Areas:</strong> Additional charges may apply for extremely remote locations (customer will be notified in advance)</li>
                 </ul>
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">4. Packaging & Handling</h2>
                 <p className="text-gray-700 leading-relaxed mb-3 text-justify">
-                  All products are carefully packaged to ensure safe transit. The pHyDrafyt Pro+ is packed with:
+                  All products are carefully packaged to ensure safe transit. The Enpure products including the pHydrafyt Ionizers are packed with:
                 </p>
                 <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
                   <li>High-quality protective packaging materials</li>
@@ -109,7 +109,7 @@ return (
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">7. Installation Service</h2>
                 <p className="text-gray-700 leading-relaxed mb-3 text-justify">
-                  ENPURE provides complimentary professional installation for the pHyDrafyt Pro+:
+                  ENPURE provides complimentary professional installation for all the products including the pHydrafyt Ionizers:
                 </p>
                 <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
                   <li>Installation will be scheduled within 24-48 hours of delivery</li>
@@ -127,7 +127,7 @@ return (
                   <li>We do not ship to PO Box addresses</li>
                   <li>Certain high-risk or restricted areas may require additional verification</li>
                   <li>Military or defense establishments may have special delivery protocols</li>
-                  <li>International shipping is currently not available</li>
+                  <li>International shipping is also available, and may take 7-10 business days </li>
                 </ul>
             
                 <h2 className="text-2xl font-semibold text-gray-700 mt-8 mb-4">9. Damaged or Lost Shipments</h2>
@@ -154,7 +154,7 @@ return (
                     ✅ Delivery Assurance:
                   </p>
                   <p className="text-green-900">
-                    Our team ensures that your pHyDrafyt Pro+ reaches you in perfect condition. In case of any delays or issues, our customer support team is available to assist you.
+                    Our team ensures that Enpure products including the pHydrafyt Ionizers reaches you in perfect condition. In case of any delays or issues, our customer support team is available to assist you.
                   </p>
                 </div>
             
@@ -187,7 +187,7 @@ return (
                     <strong>ENPURE</strong> - Intelligent Hydration, Effortless Wellness
                   </p>
                   <p className="text-gray-600 text-sm">
-                    © 2024 ENPURE Water Solutions. All rights reserved.
+                    © 2024 ENPURE. All rights reserved.
                   </p>
                 </div>
             
@@ -204,6 +204,8 @@ return (
 
 
 export default ShippingPolicy;
+
+
 
 
 
