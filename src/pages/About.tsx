@@ -5,6 +5,7 @@ import ourStory from '../assets/ourStory.jpeg';
 import aboutEnpure from '../assets/kobu-agency-TWIRIAizZFU-unsplash.jpg';
 import directorMarketing from '../assets/directorMarketing.jpeg';
 import makeInIndia from '../assets/makeInIndia.png';
+import directorOperations from '../assets/directorOperations.png';
 
 const About = () => {
   const stats = [
@@ -52,8 +53,7 @@ const About = () => {
     {
       name: 'Dimple Sheth',
       role: 'Director of Operations',
-      image:
-        'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: directorOperations,
       description: 'Building the engine that keeps innovation flowing — flawlessly.',
     },
     {
