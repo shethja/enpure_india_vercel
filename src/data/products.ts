@@ -709,3 +709,5 @@ export const products: Product[] = [
     installation: true,
   }
 ];
+
+export default products;

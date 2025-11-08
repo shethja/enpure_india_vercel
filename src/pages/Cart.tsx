@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
 
+
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center overflow-hidden -mt-20">
