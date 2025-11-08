@@ -5,6 +5,7 @@ import ourStory from '../assets/ourStory.jpeg';
 import aboutEnpure from '../assets/kobu-agency-TWIRIAizZFU-unsplash.jpg';
 import directorMarketing from '../assets/directorMarketing.jpeg';
 import makeInIndia from '../assets/makeInIndia.png';
+import salesHead from '../assets/SalesHead.png';
 import directorOperations from '../assets/directorOperations.png';
 
 const About = () => {
@@ -65,8 +66,7 @@ const About = () => {
     {
       name: 'Dharmesh Ganjawala',
       role: 'Head of Sales',
-      image:
-        'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: salesHead,
       description: 'Turning trust into traction — and connections into growth.',
     },
   ];
