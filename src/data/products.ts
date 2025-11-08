@@ -610,7 +610,7 @@ export const products: Product[] = [
       '8-Stage Purification Process',
       'RO + UV + UF + Alkaline Enhancement',
       'Auto TDS Controller',
-      'Storage Capacity - 9L',
+      'Storage Capacity - 10L',
       'TDS and Temperature Display',
       'RO Membrane - 100 GPD',
       'RO Booster Pump - 100 GPD',
@@ -621,7 +621,7 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '20 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Storage Tank': '9 Liters',
+      'Storage Tank': '10 Liters',
       'Alkaline pH Range': '8.5-9 pH',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption': '60 Watts',
@@ -651,7 +651,6 @@ export const products: Product[] = [
     features: [
       '7-Stage Purification Process',
       'RO + UV + UF',
-      'Manual TDS Controller',
       'RO Membrane - 400 GPD',
       'RO Booster Pump - 400 GPD',
       'Pressure Gauge Meter',
@@ -664,7 +663,7 @@ export const products: Product[] = [
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption': '60 Watts',
       'Dimensions': '21" × 11" × 15" ',
-      'Weight': '7.5 kg',
+      'Weight': '12 kg',
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
@@ -689,6 +688,7 @@ export const products: Product[] = [
       '7-Stage Purification Process',
       'RO + UV + UF',
       'Manual TDS Controller',
+      '10 L Storage Capacity',
       'RO Membrane - 400 GPD',
       'RO Booster Pump - 400 GPD',
       'Pressure Gauge Meter',
@@ -698,10 +698,11 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '50 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank': '9 Liters',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption': '60 Watts',
       'Dimensions': '21" × 11" × 15" ',
-      'Weight': '7.5 kg',
+      'Weight': '12 kg',
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
