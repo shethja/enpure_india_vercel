@@ -12,8 +12,8 @@ import s100 from '../assets/s100.png';
 import tntMax from '../assets/tntMax.png';
 import tntPro from '../assets/tntPro.png';
 import tnt from '../assets/TNT BG.png';
-import tnt100lph from '../assets/tnt100lph.png';
-import tnt50lph from '../assets/tnt100lph.png';
+import tnt100lph from '../assets/tnt100lphwh.png';
+import tnt50lph from '../assets/tnt50lphwh.png';
 import aeroSlimBlack from '../assets/pHYDRAFYT AEROSLIM BLK.png';
 import aeroSlimWhite from '../assets/pHYDRAFYT AEROSLIM WH.png';
 import aeroSlimWall from '../assets/AeroSlim.png';
@@ -30,6 +30,7 @@ import tnt100lphWall from '../assets/tnt_100lph_wall.png';
 import tnt100lphChef from '../assets/tnt_100lph_chef.png';
 import tnt50lphWall from '../assets/tnt_50lph_wall.png';
 import tnt50lphChef from '../assets/tnt_50lph_chef.png';
+import tnt200lphHotel from '../assets/200lphHotel.png';
 
 export interface Product {
   id: string;
@@ -639,6 +640,7 @@ export const products: Product[] = [
     originalPrice: 49900,
     image: tnt100lph,
     gallery:[
+      tnt200lphHotel,
       tnt100lphWall,
       tnt100lphChef
     ],
