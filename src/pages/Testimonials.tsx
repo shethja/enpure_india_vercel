@@ -27,7 +27,7 @@ const Testimonials = () => {
                       ))}
                     </div>
                     <p className="text-slate-700 mb-6 text-base md:text-lg leading-relaxed font-light italic">
-                      "{testimonial.quote}"
+                      {testimonial.quote}
                     </p>
                   </div>
                   <div className="flex items-center mt-auto">
