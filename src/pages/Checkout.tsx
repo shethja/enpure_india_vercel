@@ -76,7 +76,7 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
         total,
       });
       console.log('Order details updated');
-
+      
       //Send Email Confirmation
       // ✅ Fetch complete order data from Firestore
       const orderSnap = await getDoc(orderRef);
@@ -159,44 +159,39 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
         const response = await fetch("/api/create-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ amount, currency }),
+          body: JSON.stringify({amount, currency }),
         });
         const order = await response.json();
         //console.log(import.meta.env);
         // 2️⃣ Configure Razorpay options
         const options = {
-          key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+          key: import.meta.env.VITE_RAZORPAY_KEY_ID_TEST,
           amount: order.amount,
           currency: order.currency,
           name: "Enpure",
           description: "Product Purchase",
           order_id: order.id,
 
-          handler: async function (response: any) {
-            try {
+                handler: async function (response: any) {
+                try {
+                  const verifyRes = await fetch("/api/verify-payment", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      razorpay_order_id: response.razorpay_order_id,
+                      razorpay_payment_id: response.razorpay_payment_id,
+                      razorpay_signature: response.razorpay_signature,
+                    }),
+                  });
               
-                // 🧾 2.1 Verify the payment on backend before proceeding
-                const verifyRes = await fetch("/api/verify-payment", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
-                    razorpay_order_id: response.razorpay_order_id,
-                    razorpay_payment_id: response.razorpay_payment_id,
-                    razorpay_signature: response.razorpay_signature,
-                  }),
-                });
-
-                const verifyData = await verifyRes.json();
-                
-                if (!verifyData.success) {
-                  alert("❌ Payment verification failed. Please contact support.");
-                  console.error("Verification failed:", verifyData);
-                  return;
-                }
-
-                console.log("✅ Payment verified successfully!");
-                
-
+                  const verifyData = await verifyRes.json();
+                  console.log("Verify response:", verifyData);
+              
+                  if (!verifyData.ok) {
+                    alert("❌ Payment verification failed. Please contact support.");
+                    console.error("Verification failed:", verifyData);
+                    return;
+                  }
 
                 // ✅ Payment successful — store payment details
                 const paymentData = {
@@ -230,7 +225,7 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
                 });
 
               console.log('Order Details updated!');
-             
+
 
               //Send Email Confirmation
               // ✅ Fetch complete order data from Firestore
