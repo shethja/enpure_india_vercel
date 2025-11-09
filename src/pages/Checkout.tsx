@@ -165,7 +165,7 @@ const handlePaymentSubmit = (e: React.FormEvent) => {
         //console.log(import.meta.env);
         // 2️⃣ Configure Razorpay options
         const options = {
-          key: import.meta.env.VITE_RAZORPAY_KEY_ID_TEST,
+          key: import.meta.env.VITE_RAZORPAY_KEY_ID_DIHYDRO,
           amount: order.amount,
           currency: order.currency,
           name: "Enpure",

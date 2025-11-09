@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     }
 
     const hmac = crypto
-      .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET_TEST)
+      .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET_DIHYDRO)
       .update(`${razorpay_order_id}|${razorpay_payment_id}`)
       .digest("hex");
 
