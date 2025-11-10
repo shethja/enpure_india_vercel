@@ -30,7 +30,10 @@ import tnt100lphWall from '../assets/tnt_100lph_wall.png';
 import tnt100lphChef from '../assets/tnt_100lph_chef.png';
 import tnt50lphWall from '../assets/tnt_50lph_wall.png';
 import tnt50lphChef from '../assets/tnt_50lph_chef.png';
-import tnt200lphHotel from '../assets/200lphHotel.png';
+import tnt200lphModernKitchen from '../assets/200lph_modernKitchen.png';
+import tnt50lphModernKitchen from '../assets/tnt_50lph_chef_modernKitchen.png';
+import tnt100lphModernKitchen from '../assets/tnt_100lph_modernKitchen.png';
+import neo_hot_water from '../assets/neo+_hotWater_family.png';
 
 export interface Product {
   id: string;
@@ -71,7 +74,7 @@ export const products: Product[] = [
     gallery:[
       neo_wo_faucet,
       faucet,
-      neo_under_sink
+      neo_hot_water
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -640,9 +643,10 @@ export const products: Product[] = [
     originalPrice: 49900,
     image: tnt100lph,
     gallery:[
-      tnt200lphHotel,
       tnt100lphWall,
-      tnt100lphChef
+      tnt100lphChef,
+      tnt100lphModernKitchen,
+      tnt200lphModernKitchen
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -678,7 +682,8 @@ export const products: Product[] = [
     image: tnt50lph,
     gallery:[
       tnt50lphWall,
-      tnt50lphChef
+      tnt50lphChef,
+      tnt50lphModernKitchen
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -709,5 +714,3 @@ export const products: Product[] = [
     installation: true,
   }
 ];
-
-export default products;
