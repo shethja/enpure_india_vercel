@@ -35,6 +35,8 @@ import tnt50lphModernKitchen from '../assets/tnt_50lph_modernKitchen.png';
 import tnt200lphModernKitchen from '../assets/tnt_200lph_modernKitchen.png';
 import tnt100lphChefModernKitchen from '../assets/tnt_100lph_chef_modernKitchen.png';
 import neo_hot_water from '../assets/neo+_hotWater_family.png';
+import aeroslim_with_ro from '../assets/aeroslim_with_RO.png';
+import aeroslim_with_utc_ro from '../assets/aeroslim_with_utc_RO.png';
 
 export interface Product {
   id: string;
@@ -135,7 +137,9 @@ export const products: Product[] = [
     image: aeroSlimBlack,
     gallery:[
       aeroSlimWhite,
-      aeroSlimWall
+      aeroSlimWall,
+      aeroslim_with_utc_ro,
+      aeroslim_with_ro
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -640,8 +644,8 @@ export const products: Product[] = [
     id: '12',
     name: 'EN-TNT-100LPH',
     category: 'commercial',
-    price: 44900,
-    originalPrice: 49900,
+    price: 54900,
+    originalPrice: 59900,
     image: tnt100lph,
     gallery:[
       tnt100lphChefModernKitchen,
@@ -654,10 +658,12 @@ export const products: Product[] = [
     description: 'High-Capacity 100 LPH Commercial Water Purification System Designed for Offices, Restaurants, and Small Businesses.',
     features: [
       '7-Stage Purification Process',
-      'RO + UV + UF',
-      'RO Membrane - 400 GPD',
-      'RO Booster Pump - 400 GPD',
+      'RO + UF',
+      'RO Membrane - 400 GPD x 2',
+      'RO Booster Pump - 400 GPD x 2',
       'Pressure Gauge Meter',
+      'Float Connection',
+      'Power Supply - 3 Amps x 2',
       'Food Grade ABS Body',
       'High recovery rate of 70% - Water Saving Auto Revive Technology'
     ],
@@ -665,7 +671,7 @@ export const products: Product[] = [
       'Purification Capacity': '100 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
       'Input Water Pressure': '10-40 PSI',
-      'Power Consumption': '60 Watts',
+      'Power Supply': '3 Amps + 3 Amps',
       'Dimensions': '21" × 11" × 15" ',
       'Weight': '12 kg',
       'Warranty': '1 Year'
@@ -677,8 +683,8 @@ export const products: Product[] = [
     id: '13',
     name: 'EN-TNT-50LPH',
     category: 'commercial',
-    price: 34900,
-    originalPrice: 39900,
+    price: 39900,
+    originalPrice: 44900,
     image: tnt50lph,
     gallery:[
       tnt50lphModernKitchen
@@ -690,11 +696,13 @@ export const products: Product[] = [
     features: [
       '7-Stage Purification Process',
       'RO + UV + UF',
+      '50 Litres per Hour of Purification Speed',
       'Manual TDS Controller',
       '10 L Storage Capacity',
+      'TDS Display',
+      'Digital Display',
       'RO Membrane - 400 GPD',
       'RO Booster Pump - 400 GPD',
-      'Pressure Gauge Meter',
       'Food Grade ABS Body',
       'High recovery rate of 70% - Water Saving Auto Revive Technology'
     ],
@@ -703,7 +711,7 @@ export const products: Product[] = [
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
       'Storage Tank': '9 Liters',
       'Input Water Pressure': '10-40 PSI',
-      'Power Consumption': '60 Watts',
+      'Power Supply': '3 Amps',
       'Dimensions': '21" × 11" × 15" ',
       'Weight': '12 kg',
       'Warranty': '1 Year'
