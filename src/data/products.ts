@@ -37,6 +37,7 @@ import tnt100lphChefModernKitchen from '../assets/tnt_100lph_chef_modernKitchen.
 import neo_hot_water from '../assets/neo+_hotWater_family.png';
 import aeroslim_with_ro from '../assets/aeroslim_with_RO.png';
 import aeroslim_with_utc_ro from '../assets/aeroslim_with_utc_RO.png';
+import aeroslim_sideView from '../assets/aeroSlim_sideView.png';
 
 export interface Product {
   id: string;
@@ -138,6 +139,7 @@ export const products: Product[] = [
     gallery:[
       aeroSlimWhite,
       aeroSlimWall,
+      aeroslim_sideView,
       aeroslim_with_utc_ro,
       aeroslim_with_ro
     ],
