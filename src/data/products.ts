@@ -23,7 +23,7 @@ import prime_pro_hot from '../assets/Prime_Pro_Pro+.png';
 import prime_pro_wall from '../assets/Prime_Pro_Wall.png';
 import neo_under_sink from '../assets/Neo_Neo+.png';
 import neo_wo_faucet from '../assets/pHYDRAFYT NEO+.png';
-import tntMax_Wall from '../assets/tntMax_wall.png';
+//import tntMax_Wall from '../assets/tntMax_wall.png';
 import tnt_Wall from '../assets/tnt_wall.png';
 import xs_s_Wall from '../assets/xs_s_wall.png';
 import tnt100lphWall from '../assets/tnt_100lph_wall.png';
@@ -38,6 +38,10 @@ import neo_hot_water from '../assets/neo+_hotWater_family.png';
 import aeroslim_with_ro from '../assets/aeroslim_with_RO.png';
 import aeroslim_with_utc_ro from '../assets/aeroslim_with_utc_RO.png';
 import aeroslim_sideView from '../assets/aeroSlim_sideView.png';
+import tnt_pro_wall from '../assets/tnt_pro_wall.png';
+import tnt_pro_white from '../assets/tnt_pro_wh.png';
+import tnt_max_family from '../assets/tnt_max_family.png';
+import s_wall from '../assets/s_wall.png';
 
 export interface Product {
   id: string;
@@ -189,7 +193,8 @@ export const products: Product[] = [
     originalPrice: 29900,
     image: xs400,
     gallery:[
-      xs_s_Wall
+      xs_s_Wall,
+      s_wall
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -477,7 +482,8 @@ export const products: Product[] = [
     originalPrice: 20900,
     image: s100,
     gallery:[
-      xs_s_Wall
+      xs_s_Wall,
+      s_wall
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -523,7 +529,7 @@ export const products: Product[] = [
     originalPrice: 28200,
     image: tntMax,
     gallery:[
-      tntMax_Wall,
+      tnt_max_family
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
@@ -567,7 +573,8 @@ export const products: Product[] = [
     originalPrice: 24900,
     image: tntPro,
     gallery:[
-      tntMax_Wall
+      tnt_pro_white,
+      tnt_pro_wall
     ],
     colors: ["Black","White"],
     defaultColor: "Black",
