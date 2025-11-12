@@ -31,7 +31,7 @@ import tnt100lphChef from '../assets/tnt_100lph_chef.png';
 import tnt50lphWall from '../assets/tnt_50lph_wall.png';
 import tnt50lphChef from '../assets/tnt_50lph_chef.png';
 import tnt200lphModernKitchenReal from '../assets/200lph_modernKitchen.png';
-import tnt50lphModernKitchen from '../assets/tnt_50lph_modernKitchen.png';
+import tnt50lphModernKitchen from '../assets/tnt_50lph_chef_modernKitchen.png';
 import tnt200lphModernKitchen from '../assets/tnt_200lph_modernKitchen.png';
 import tnt100lphChefModernKitchen from '../assets/tnt_100lph_chef_modernKitchen.png';
 import neo_hot_water from '../assets/neo+_hotWater_family.png';
