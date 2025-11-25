@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Store, Users, Target, CheckCircle, Send, MapPin, Phone, Mail } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-const Dealership: React.FC = () => {
+const Partnership: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -533,4 +533,4 @@ const Dealership: React.FC = () => {
   );
 };
 
-export default Dealership;
+export default Partnership;

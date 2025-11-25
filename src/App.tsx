@@ -22,7 +22,7 @@ import ReturnRefundPolicy from './pages/Return-Refund-Policy';
 import Terms from './pages/Terms';
 import Testimonials from './pages/Testimonials';
 import Installation from './pages/Installation';
-import Dealership from './pages/Dealership';
+import Partnership from './pages/Partnership';
 import OrderConfirmation from './pages/OrderConfirmation';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
@@ -73,7 +73,7 @@ function App() {
                 <Route path="/order-confirmation" element={<OrderConfirmation />} />
                 <Route path="/shipping-policy" element={<ShippingPolicy />} />
                 <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
-                <Route path="/dealership" element={<Dealership />} />
+                <Route path="/partnership" element={<Partnership />} />
                 {/*<Route path="/uploadProducts" element={<UploadProducts />} /> */}
                 {/*<ToastContainer position="top-center" autoClose={2000} /> */}
               </Routes>

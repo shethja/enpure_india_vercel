@@ -74,7 +74,7 @@ const Header = () => {
             <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
               <NavButton to="/" label="Home" active={location.pathname === '/'} />
               <NavButton to="/products" label="Products" active={location.pathname === '/products'} />
-              <NavButton to="/dealership" label="Partnership" active={location.pathname === '/dealership'} />
+              <NavButton to="/partnership" label="Partnership" active={location.pathname === '/partnership'} />
               <NavButton to="/installation" label="Installation" active={location.pathname === '/installation'} />
               <NavButton to="/blogs" label="Blogs" active={location.pathname === '/blogs'} />
               <NavButton to="/about" label="About" active={location.pathname === '/about'} />
@@ -167,7 +167,7 @@ const Header = () => {
                 {[
                   { label: "Home", to: "/" },
                   { label: "Products", to: "/products" },
-                  { label: "Partnership", to: "/dealership" },
+                  { label: "Partnership", to: "/partnership" },
                   { label: "Installation", to: "/installation" },
                   { label: "Blogs", to: "/blogs" },
                   { label: "About", to: "/about" },
