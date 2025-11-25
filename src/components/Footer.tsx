@@ -109,7 +109,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/dealership" className="text-slate-600 hover:text-blue-950 transition-colors duration-300 text-sm">
-                  Dealership
+                  Partnership
                 </Link>
               </li>
             </ul>

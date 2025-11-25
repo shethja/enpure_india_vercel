@@ -128,7 +128,7 @@ const Dealership: React.FC = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Dealership Enquiries',
-      details: ['Sales: +91 98255 22119', 'Support: +91 70160 38671', 'WhatsApp: +91 70160 38671'],
+      details: ['Sales: +91 70160 38671', 'WhatsApp: +91 70160 38671'],
     },
     {
       icon: <Mail className="h-6 w-6" />,
