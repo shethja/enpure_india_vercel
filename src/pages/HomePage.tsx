@@ -488,6 +488,14 @@ const HomePage = () => {
                 <span>Call Now for a Live Video Call Demo</span>
                 <ArrowRight className="h-5 w-5" />
               </a>
+              <Link
+                to="/dealership"
+                className="modern-button inline-flex items-center bg-blue-875 text-white px-12 py-4 rounded-2xl text-lg font-medium hover:bg-blue-875 flex items-center justify-center space-x-3 shadow-2xl"
+                //className="modern-button glass-card bg-blue-875 text-black py-4 px-6 rounded-full hover:bg-blue-950 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 shadow-lg font-medium"
+              >
+                <span>For Business Partnership</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </div>
 
 <br/>

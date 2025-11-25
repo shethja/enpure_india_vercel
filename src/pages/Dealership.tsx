@@ -133,7 +133,7 @@ const Dealership: React.FC = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'Email',
-      details: ['enpureinternational@gmail.com', 'info@enpure.in'],
+      details: ['info@enpure.in', 'sales.enpure@gmail.com'],
     },
   ];
 
