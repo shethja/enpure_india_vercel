@@ -149,7 +149,7 @@ const Partnership: React.FC = () => {
               Become an Enpure & pHydrafyt Partner
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Partner with Enpure to bring Next-Generation Water Purifiers and Alkaline Ionizers to your city. <br />
+              Partner with Enpure to bring Next-Gen Water Purifiers and Alkaline Ionizers to your city. <br />
               Join our Dealer Network and Grow with a Modern, Design-led Hydration brand.
             </p>
           </div>
