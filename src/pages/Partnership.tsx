@@ -13,7 +13,6 @@ const Partnership: React.FC = () => {
     businessType: 'Dealer / Retailer',
     yearsInBusiness: '',
     investment: '5-7 Lakhs (for DSAs)',
-    interestedIn: 'Enpure Water Purifiers & pHydrafyt Ionizers',
     message: '',
   });
 
@@ -36,8 +35,8 @@ const Partnership: React.FC = () => {
     try {
       // ✅ Send email via EmailJS
       await emailjs.send(
-        'service_j52iqpi', // TODO: replace with your EmailJS Service ID
-        'template_zikopck', // TODO: replace with your EmailJS Template ID for dealership leads
+        'service_522g4kf', // TODO: replace with your EmailJS Service ID
+        'template_iqukr3h', // TODO: replace with your EmailJS Template ID for dealership leads
         {
           name: formData.name,
           email: formData.email,
@@ -47,12 +46,11 @@ const Partnership: React.FC = () => {
           state: formData.state,
           businessType: formData.businessType,
           yearsInBusiness: formData.yearsInBusiness,
-          interestedIn: formData.interestedIn,
           investment: formData.investment,
           message: formData.message,
           formType: 'Dealership Inquiry',
         },
-        'xkyJ1mI3UhDDxhFEr' // TODO: replace with your EmailJS Public Key
+        'MJeltehBssgy9Rizi' // TODO: replace with your EmailJS Public Key
       );
 
       // ✅ Optional: Fire Meta Pixel Lead event for dealership form
@@ -83,7 +81,6 @@ const Partnership: React.FC = () => {
           businessType: 'Dealer / Retailer',
           yearsInBusiness: '',
           investment: '5-7 Lakhs (for DSAs)',
-          interestedIn: 'Enpure Water Purifiers & pHydrafyt Ionizers',
           message: '',
         });
       }, 5000);
@@ -157,20 +154,6 @@ const Partnership: React.FC = () => {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {dealershipHighlights.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue100 text-blue-800 mb-4">
-                {item.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center md:text-left">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-sm md:text-base">{item.description}</p>
-            </div>
-          ))}
-        </div>
 
         <div className="lg:grid lg:grid-cols-2 lg:gap-12">
           {/* Dealership Form */}
@@ -354,26 +337,6 @@ const Partnership: React.FC = () => {
                         placeholder="e.g. 3+ years"
                       />
                     </div>
-                    <div>
-                      <label
-                        htmlFor="interestedIn"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Interested In
-                      </label>
-                      <select
-                        id="interestedIn"
-                        name="interestedIn"
-                        value={formData.interestedIn}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      >
-                        <option>Enpure Water Purifiers & pHydrafyt Ionizers</option>
-                        <option>Only Enpure Water Purifiers</option>
-                        <option>Only pHydrafyt Alkaline Ionizers</option>
-                        <option>Commercial Water Purifiers (Titan Series)</option>
-                      </select>
-                    </div>
                   </div>
 
                   <div>
@@ -401,12 +364,11 @@ const Partnership: React.FC = () => {
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Tell us about your business *
+                      Tell us about your business
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      required
                       rows={5}
                       value={formData.message}
                       onChange={handleInputChange}
@@ -472,6 +434,21 @@ const Partnership: React.FC = () => {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {dealershipHighlights.map((item, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md p-6">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue100 text-blue-800 mb-4">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center md:text-left">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-sm md:text-base">{item.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* FAQ Section (Dealership Focus) */}
