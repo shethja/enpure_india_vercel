@@ -7,6 +7,7 @@ import modernFiltration from '../assets/modernFiltration.png';
 import tapWater from '../assets/tapWater.png';
 import tapToTable1 from '../assets/topToTable(1).png';
 import whyEnpure from '../assets/whyEnpure.png';
+import alkalineWPI from '../assets/alkalineWPI.png';
 //import microClustering from '../assets/microClustering.png';
 //import whyAlkalineWater from '../assets/whyAlkalineWater.jpg';
 //import iodizedAlkalineMinerals from '../assets/iodizedAlkalineMinerals.jpg';
@@ -393,6 +394,164 @@ compared to regular water, ensuring you feel refreshed and energized.</em></p>
 <p>Beyond immune enhancement, consistent consumption of ionized alkaline water supports metabolic recovery, energy balance, and overall wellbeing. These effects stem not from the water alone but from how it integrates with a balanced diet, rest, and lifestyle.</p>
 
 <p><em>Enpure — delivering water that nourishes the body’s first line of defense.</em></p>
+`
+},
+{
+  id: 9,
+  title: "Alkaline Water Purifier vs Alkaline Ionizer – What’s the Difference?",
+  slug: "alkaline-purifier-vs-ionizer",
+  excerpt: "Understand the key differences between alkaline water purifiers that use mineral cartridges and alkaline ionizers that use electrolysis. Learn how each technology affects pH, ORP, minerals, and hydrogen levels in your drinking water.",
+  metaTitle: "Alkaline Water Purifier vs Alkaline Ionizer | Technology & Water Difference",
+  metaDescription: "Compare cartridge-based alkaline purifiers with electrolysis-based alkaline ionizers. Explore differences in pH, ORP, minerals, purification stages, and hydrogen-rich water.",
+  keywords: [
+    "alkaline water purifier",
+    "alkaline ionizer",
+    "hydrogen water",
+    "electrolysis water",
+    "alkaline cartridge",
+    "ORP water",
+    "pH water comparison"
+  ],
+  image: alkalineWPI,
+  readTime: "11 min read",
+  date: "November 2025",
+  content: 
+  `
+<h2>Alkaline Water Purifier vs Alkaline Ionizer: What Really Changes?</h2>
+
+<p>Although both systems are often marketed as “alkaline water,” the way they work—and the type of water they produce—are fundamentally different. The two main technologies are:</p>
+
+<ul>
+  <li><strong>Alkaline Water Purifiers (Cartridge-based):</strong> RO+UV+UF systems with an added alkaline or mineral cartridge.</li>
+  <li><strong>Alkaline Ionizers (Electrolysis-based):</strong> Devices that alter water using an electrolysis chamber with platinum-coated plates.</li>
+</ul>
+
+<p>Both increase pH, but the <strong>science, performance, and benefits</strong> vary significantly.</p>
+
+<h2><strong><em>1. What is an Alkaline Water Purifier?</em></strong></h2>
+<p>An alkaline water purifier is typically a standard RO+UV+UF machine with an added <strong>alkaline cartridge</strong> placed after the RO membrane. Since RO removes most minerals, the alkaline cartridge reintroduces essential minerals and raises the pH.</p>
+
+<h3>How it works</h3>
+<ul>
+  <li>RO removes dissolved salts and impurities.</li>
+  <li>UV/UF adds microbial safety.</li>
+  <li>An alkaline cartridge adds minerals like calcium, magnesium, and potassium.</li>
+  <li>pH increases naturally as water passes through mineral media.</li>
+</ul>
+
+<h3>What changes in the water?</h3>
+<ul>
+  <li><strong>pH Boost:</strong> Water typically reaches a mild alkaline range (7.5–9.0).</li>
+  <li><strong>Better Taste:</strong> Remineralization improves mouthfeel and flavor.</li>
+  <li><strong>Stable mineral content:</strong> Water gains natural mineral ions depending on the cartridge composition.</li>
+  <li><strong>Low ORP impact:</strong> Slight reduction in oxidation potential, but limited compared to ionizers.</li>
+  <li><strong>Low Hydrogen Content:</strong> Cartridge systems generally do not generate dissolved hydrogen.</li>
+</ul>
+
+<p>Think of this as: <strong>Purify → Remineralize → Slightly Alkalize.</strong></p>
+
+<div class="highlight">
+<strong>Ideal for:</strong> Homes and cafés wanting purified, mineral-rich, better-tasting water without complex electronics.
+</div>
+
+<h2><strong><em>2. What is an Alkaline Ionizer?</em></strong></h2>
+<p>An alkaline ionizer uses <strong>electrolysis</strong>—the process of applying an electric current to water—to alter its properties. Inside the ionizer, water passes across <strong>electrode plates</strong> (usually platinum-coated titanium) that separate it into alkaline and acidic streams.</p>
+
+<h3>How electrolysis works</h3>
+<ul>
+  <li>Purified water enters the ionization chamber.</li>
+  <li>DC current splits water across charged plates.</li>
+  <li>The cathode produces <strong>alkaline, hydrogen-rich</strong> water.</li>
+  <li>The anode produces <strong>acidic water</strong> (for cleaning or external uses).</li>
+  <li>Users can select pH levels digitally.</li>
+</ul>
+
+<h3>What changes in the water?</h3>
+<ul>
+  <li><strong>Programmable pH:</strong> Multiple alkaline levels like pH 8.5, 9.0, or 9.5.</li>
+  <li><strong>Negative ORP:</strong> Water often gains “reducing” or antioxidant properties.</li>
+  <li><strong>Hydrogen-rich water:</strong> Electrolysis can produce higher levels of dissolved molecular hydrogen (H₂), depending on model and settings.</li>
+  <li><strong>Altered ion balance:</strong> Electrolysis influences mineral ionization states, potentially impacting absorption.</li>
+</ul>
+
+<div class="highlight">
+<strong>Ideal for:</strong> Users seeking adjustable alkaline levels, hydrogen-rich water, and premium hydration technology.
+</div>
+
+<h2><strong><em>3. Direct Comparison</em></strong></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>Alkaline Purifier (Cartridge)</th>
+      <th>Alkaline Ionizer (Electrolysis)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Core Technology</td>
+      <td>Mineral/alkaline cartridge after RO</td>
+      <td>Electrolysis using electrode plates</td>
+    </tr>
+    <tr>
+      <td>pH Control</td>
+      <td>Fixed, depends on cartridge</td>
+      <td>Adjustable through digital controls</td>
+    </tr>
+    <tr>
+      <td>Hydrogen Content</td>
+      <td>Low or negligible</td>
+      <td>Often high (hydrogen-rich output)</td>
+    </tr>
+    <tr>
+      <td>ORP Impact</td>
+      <td>Mild change</td>
+      <td>Significant shift to negative ORP</td>
+    </tr>
+    <tr>
+      <td>Mineral Delivery</td>
+      <td>Remineralized naturally</td>
+      <td>Minerals ionized differently</td>
+    </tr>
+    <tr>
+      <td>Complexity</td>
+      <td>Simple, low maintenance</td>
+      <td>Advanced electronics & service needs</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>More affordable</td>
+      <td>Premium price range</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. Which Should You Choose?</h2>
+
+<h3>Choose an Alkaline Purifier if you want:</h3>
+<ul>
+  <li>RO-level purification</li>
+  <li>Better taste</li>
+  <li>Affordable alkaline water</li>
+  <li>Simple maintenance</li>
+</ul>
+
+<h3>Choose an Alkaline Ionizer if you want:</h3>
+<ul>
+  <li>Hydrogen-rich water</li>
+  <li>Control over pH levels</li>
+  <li>Premium hydration technology</li>
+  <li>More negative ORP</li>
+</ul>
+
+<div class="highlight">
+<strong>Bottom line:</strong>  
+Both systems have value—but they serve different needs. Cartridge-based alkaline purifiers enhance RO water with minerals and mild alkalinity.  
+Ionizers go a step further by adding programmable pH, hydrogen generation, and electrolysis-based benefits.
+</div>
+
+<p><em>Enpure — helping you choose cleaner, safer, and smarter water for your lifestyle.</em></p>
 `
 }
 ];
