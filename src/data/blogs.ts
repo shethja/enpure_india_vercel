@@ -9,6 +9,7 @@ import tapToTable1 from '../assets/topToTable(1).png';
 import whyEnpure from '../assets/whyEnpure.png';
 import alkalineWPI from '../assets/alkalineWPI.png';
 import alkalineEnergy from '../assets/fitness.jpg';
+import skincareWater from '../assets/kobu-agency-TWIRIAizZFU-unsplash.jpg';
 //import microClustering from '../assets/microClustering.png';
 //import whyAlkalineWater from '../assets/whyAlkalineWater.jpg';
 //import iodizedAlkalineMinerals from '../assets/iodizedAlkalineMinerals.jpg';
@@ -578,6 +579,81 @@ compared to regular water, ensuring you feel refreshed and energized.</em></p>
 <p>Alkaline water is not a stimulant, nor does it artificially boost energy. Instead, it supports the systems that naturally govern hydration, mineral balance and cellular efficiency. For many people, this results in a subtle yet steady improvement in daily energy levels when combined with a balanced lifestyle.</p>
 
 <p><strong><em>Enpure — supporting your hydration and wellbeing with cleaner, mineral-balanced water.</em></strong></p>
+`
+},
+{
+  id: 11,
+  title: "How pH 5–6 Water Supports Skincare Externally & How Alkaline Water Supports Skin From Within",
+  slug: "ph-water-skincare",
+  excerpt: "Learn why slightly acidic water (pH 5–6) aligns with the skin’s natural barrier for external care, and how alkaline water supports hydration and overall skin wellness from within.",
+  metaTitle: "pH 5–6 Water for Skincare & Alkaline Water for Skin Health",
+  metaDescription: "Understand the difference between using mildly acidic water on the skin and drinking alkaline water for internal hydration and wellness.",
+  keywords: [
+    "pH 5 water skincare",
+    "acidic water for skin",
+    "alkaline water skin benefits",
+    "skin barrier hydration",
+    "acid mantle",
+    "ionized water skincare"
+  ],
+  image: skincareWater,
+  readTime: "9 min read",
+  date: "November 27, 2025",
+  content: `
+<h2><strong><em>Understanding pH and your skin</em></strong></h2>
+
+<p>The skin has a natural protective layer known as the <strong>acid mantle</strong> — a very thin film on the skin’s surface with a pH typically between <strong>4.7 and 5.5</strong>. This mildly acidic environment helps preserve moisture, support the skin barrier, and maintain balance against external factors.</p>
+
+<p>Because of this natural acidity, both <strong>slightly acidic water (pH 5–6)</strong> for external use and <strong>alkaline water for hydration</strong> internally play different roles in overall skin wellness.</p>
+
+<h3><strong><em>Why pH 5–6 water is beneficial for external skin cleansing</em></strong></h3>
+
+<p>Water with a pH between 5 and 6 is close to the skin’s own pH. When used externally — for rinsing, misting, or gentle cleansing — it supports the skin barrier without disrupting its balance. This can help maintain comfort and surface hydration.</p>
+
+<h3><strong><em>How mildly acidic water supports the skin</em></strong></h3>
+
+<ul>
+  <li><strong>Maintains the skin barrier:</strong> Keeping the acid mantle undisturbed helps skin stay resilient and balanced.</li>
+  <li><strong>Gentle cleansing:</strong> pH 5–6 water can feel softer and more compatible with the skin’s natural state.</li>
+  <li><strong>Surface hydration:</strong> When the barrier stays intact, skin can hold moisture more effectively.</li>
+  <li><strong>Balances after alkaline cleansers:</strong> Some cleansers are higher in pH; a mildly acidic rinse can help return the skin to its natural level.</li>
+</ul>
+
+<p>Because it aligns with the skin’s natural environment, pH 5–6 water is often considered comfortable and supportive for external skincare routines.</p>
+
+<h3><strong><em>How alkaline water supports the skin from within</em></strong></h3>
+
+<p>While acidic water benefits the outside of the skin, <strong>alkaline or ionized alkaline water</strong>, when consumed, plays a different role. It is still fundamentally water — and hydration is one of the most important factors in maintaining skin appearance and comfort.</p>
+
+<p>Better hydration helps support skin elasticity, smoothness and moisture balance. The mineral content in alkaline water, such as calcium, magnesium and potassium, may also support general hydration.</p>
+
+<h3><strong><em>Internal hydration and skin wellness</em></strong></h3>
+
+<ul>
+  <li><strong>Hydration balance:</strong> Water intake is crucial for keeping skin comfortable and avoiding dryness.</li>
+  <li><strong>Mineral support:</strong> Minerals in alkaline water can help maintain overall hydration levels.</li>
+  <li><strong>Daily water habit:</strong> Some people find alkaline water easier to drink, encouraging more consistent hydration.</li>
+  <li><strong>Comfort during activity:</strong> Good hydration can help support skin during heat, exercise or long days outdoors.</li>
+</ul>
+
+<p>Alkaline water is not a skincare treatment — but it supports the body’s natural hydration, which is closely linked to how skin feels and functions.</p>
+
+<h3><strong><em>Two pH levels — two different roles</em></strong></h3>
+
+<p>It’s important to understand that acidic and alkaline waters serve different purposes:</p>
+
+<ul>
+  <li><strong>pH 5–6 water:</strong> Suited for external use, aligns with the skin’s natural acidity, helps maintain surface balance.</li>
+  <li><strong>Alkaline water:</strong> Intended for drinking; supports hydration from within, which influences skin comfort and moisture levels.</li>
+</ul>
+
+<p>Both can play a role in overall skincare, but in completely different ways — one externally on the skin’s surface, the other internally through hydration.</p>
+
+<h3><strong><em>A balanced perspective</em></strong></h3>
+
+<p>Healthy skin depends on hydration, gentle cleansing and maintaining the skin barrier. Using water that matches the skin’s natural pH externally, and staying well-hydrated internally, are both simple yet effective ways to support skincare routines.</p>
+
+<p><strong><em>Enpure — understanding water from the inside out, so you can care for your skin naturally.</em></strong></p>
 `
 }
 ];
