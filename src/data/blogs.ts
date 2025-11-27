@@ -583,7 +583,7 @@ compared to regular water, ensuring you feel refreshed and energized.</em></p>
 },
 {
   id: 11,
-  title: "How pH 5–6 Water Supports Skincare Externally & How Alkaline Water Supports Skin From Within",
+  title: "Skin Health and Water pH: Acidic for the Skin Surface, Alkaline for Hydration",
   slug: "ph-water-skincare",
   excerpt: "Learn why slightly acidic water (pH 5–6) aligns with the skin’s natural barrier for external care, and how alkaline water supports hydration and overall skin wellness from within.",
   metaTitle: "pH 5–6 Water for Skincare & Alkaline Water for Skin Health",
