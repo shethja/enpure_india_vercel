@@ -31,7 +31,7 @@ import tnt100lphChef from '../assets/tnt_100lph_chef.png';
 import tnt50lphWall from '../assets/tnt_50lph_wall.png';
 import tnt50lphChef from '../assets/tnt_50lph_chef.png';
 import tnt200lphModernKitchenReal from '../assets/200lph_modernKitchen.png';
-import tnt50lphModernKitchen from '../assets/tnt_50lph_chef_modernKitchen.png';
+import tnt50lphModernKitchen from '../assets/tnt_50lph_modernKitchen.png';
 import tnt200lphModernKitchen from '../assets/tnt_200lph_modernKitchen.png';
 import tnt100lphChefModernKitchen from '../assets/tnt_100lph_chef_modernKitchen.png';
 import neo_hot_water from '../assets/neo+_hotWater_family.png';
@@ -61,6 +61,12 @@ export interface Product {
   };
   warranty: string;
   installation: boolean;
+
+  // SEO fields added
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
 }
 
 export interface Review {
@@ -75,19 +81,27 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'pHydrafyt Neo+ (UTC)',
+    slug: 'phydrafyt-neo-utc',
+    metaTitle: 'pHydrafyt Neo+ UTC | App-Controlled Alkaline Ionizer | Enpure',
+    metaDescription:
+      'pHydrafyt Neo+ UTC — 7 pH options, up to 1700 PPB hydrogen, 7 platinum plates, touch-screen faucet & app control. Under-sink ionizer with instant hot water.',
+    keywords: [
+      'phydrafyt neo',
+      'under-sink ionizer',
+      'hydrogen water',
+      'ionizer with faucet',
+      'app controlled ionizer'
+    ],
     category: 'alkaline-ionizer',
     price: 249000,
     originalPrice: 259000,
     image: neo_hot,
-    gallery:[
-      neo_wo_faucet,
-      faucet,
-      neo_hot_water
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [neo_wo_faucet, faucet, neo_hot_water],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: "Experience 7 Water Types including 6 Different pH and Instant Hot Water, and up to 1700 PPB Hydrogen-Rich water dispensed via a Smart, App-Controlled Touch Screen Faucet with Under-the-Sink Ionizer unit.",
+    description:
+      "Experience 7 Water Types including 6 Different pH and Instant Hot Water, and up to 1700 PPB Hydrogen-Rich water dispensed via a Smart, App-Controlled Touch Screen Faucet with Under-the-Sink Ionizer unit.",
     features: [
       '7 Platinum Coated Titanium Plates',
       '50 LPH In-built RO + UV + UF + Alkaline Ionizer + Instant Hot Water Technology',
@@ -110,47 +124,55 @@ export const products: Product[] = [
       'High recovery rate of 70% - Water Saving Auto Revive Technology',
       'Smart Auto-Cleaning Machine',
       'Works without Electricity for Stored RO Water'
-    ], 
+    ],
     specifications: {
       'Purification Capacity': '50 L/hour',
-      'Applications': 'Under the Sink with Touch-Screen Display Smart Faucet (without Pressure Tank or Pump)',
-      'Filtration': ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
+      'Applications':
+        'Under the Sink with Touch-Screen Display Smart Faucet (without Pressure Tank or Pump)',
+      'Filtration':
+        ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
       'Number of Plates': '7 Platinum Coated Titanium Plates',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8-11 pH',
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for RO': '60 Watts',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 15.5" ',
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 Years Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '2',
     name: 'pHydrafyt AeroSlim',
+    slug: 'phydrafyt-aeroslim',
+    metaTitle: "pHydrafyt AeroSlim | Slim Wall-Mount Alkaline Ionizer | Enpure",
+    metaDescription:
+      "AeroSlim — World's slimmest (3.5\") smartphone-operated alkaline ionizer. 5 platinum plates, up to 1700 PPB hydrogen, 6 pH types and app control.",
+    keywords: ['aeroslim', 'slimmest ionizer', 'smart ionizer', 'hydrogen ionizer'],
     category: 'alkaline-ionizer',
     price: 125000,
     originalPrice: 125000,
     image: aeroSlimBlack,
-    gallery:[
+    gallery: [
       aeroSlimWhite,
       aeroSlimWall,
       aeroslim_sideView,
       aeroslim_with_utc_ro,
       aeroslim_with_ro
     ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: "World's Thinnest and Most Compact Alkaline Ionizer.This RO-Compatible and Sleek Alkaline Ionizer features 5 Titanium Coated Platinum Plates, up to 1700 PPB Hydrogen, and offers 6 Different pH Water Types via a Smart, App-Controlled Touch Screen.",
+    description:
+      "World's Thinnest and Most Compact Alkaline Ionizer.This RO-Compatible and Sleek Alkaline Ionizer features 5 Titanium Coated Platinum Plates, up to 1700 PPB Hydrogen, and offers 6 Different pH Water Types via a Smart, App-Controlled Touch Screen.",
     features: [
       '5 Platinum Coated Titanium Plates',
       'App-controlled - both iOS and Android supported',
@@ -174,32 +196,35 @@ export const products: Product[] = [
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 3.5" ',
       'Weight': '3.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 Years Comprehensive Warranty (0% Maintenance Cost Upto 5 Years)',
-    installation: true,
+    installation: true
   },
   {
     id: '3',
     name: 'EN-XS-400',
+    slug: 'en-xs-400',
+    metaTitle: 'EN-XS-400 | 50 LPH RO+UV+UF+Alkaline Purifier | Enpure',
+    metaDescription:
+      'EN-XS-400 — 8-stage purification, 50 LPH RO+UV+UF+Alkaline, auto TDS control and UV-protected 7L storage with self-serviceable filters.',
+    keywords: ['en-xs-400', '50 lph purifier', 'ro uv uf alkaline', 'self service filters'],
     category: 'ro-uv-uf-alkaline',
     price: 28000,
     originalPrice: 29900,
     image: xs400,
-    gallery:[
-      xs_s_Wall,
-      s_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [xs_s_Wall, s_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: "Enjoy 8-Stage Purification (50 LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
+    description:
+      "Enjoy 8-Stage Purification (50 LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
     features: [
       '8-Stage Purification Process',
       '50 LPH RO + UV + UF + Alkaline Enhancement',
@@ -220,7 +245,8 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '50 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Filtration':'3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
+      'Filtration':
+        '3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8.5-9 pH',
       'Input Water Pressure': '10-40 PSI',
@@ -229,25 +255,27 @@ export const products: Product[] = [
       'Weight': '7.5 kg',
       'Warranty': '2 Year'
     },
-    warranty: '2 Year Comprehensive Warranty',
-    installation: true,
+    warranty: '1 Year Comprehensive Warranty',
+    installation: true
   },
   {
     id: '4',
     name: 'pHydrafyt Pro',
+    slug: 'phydrafyt-pro',
+    metaTitle: 'pHydrafyt Pro | 50 LPH In-built RO + Alkaline Ionizer | Enpure',
+    metaDescription:
+      'pHydrafyt Pro — 50 LPH RO + Alkaline Ionizer with 7 platinum plates, up to 1700 PPB hydrogen, touchscreen and app control.',
+    keywords: ['phydrafyt pro', '50 lph ionizer', 'hydrogen water', 'inbuilt ro ionizer'],
     category: 'alkaline-ionizer',
     price: 215000,
     originalPrice: 225000,
     image: pro,
-    gallery:[
-      pro_hot,
-      prime_pro_counter,
-      prime_pro_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [pro_hot, prime_pro_counter, prime_pro_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'This 50 LPH In-built RO + Alkaline Ionizer delivers Hydrogen-Rich Water (up to 1700 PPB) through 7 Platinum Coated Titanium Plates, featuring a Touch Screen and App-Control for 6 Different pH Water Types.',
+    description:
+      'This 50 LPH In-built RO + Alkaline Ionizer delivers Hydrogen-Rich Water (up to 1700 PPB) through 7 Platinum Coated Titanium Plates, featuring a Touch Screen and App-Control for 6 Different pH Water Types.',
     features: [
       '7 Platinum Coated Titanium Plates',
       '50 LPH In-built RO + UV + UF + Alkaline Ionizer Technology',
@@ -272,43 +300,45 @@ export const products: Product[] = [
     ],
     specifications: {
       'Purification Capacity': '50 L/hour',
-      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Filtration': ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
+     'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Filtration':
+        ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
       'Number of Plates': '7 Platinum Coated Titanium Plates',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8-11 pH',
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for RO': '60 Watts',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 15.5" ',
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 years Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '5',
     name: 'pHydrafyt Pro+',
+    slug: 'phydrafyt-pro-plus',
+    metaTitle: 'pHydrafyt Pro+ | RO + Ionizer + Instant Hot Water | Enpure',
+    metaDescription:
+      'pHydrafyt Pro+ — 50 LPH RO + ionizer with instant hot water, 7 platinum plates and up to 1700 PPB hydrogen. Premium kitchen hydration system.',
+    keywords: ['phydrafyt pro+', 'instant hot water ionizer', 'hydrogen ionizer'],
     category: 'alkaline-ionizer',
     price: 229000,
     originalPrice: 239000,
     image: pro,
-    gallery:[
-      pro_hot,
-      prime_pro_counter,
-      prime_pro_hot,
-      prime_pro_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [pro_hot, prime_pro_counter, prime_pro_hot, prime_pro_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'This 50 LPH In-built RO + Alkaline Ionizer delivers Hydrogen-Rich Water (up to 1700 PPB) through 7 Platinum Coated TItanium Plates, featuring a Touch Screen and App-Control for 7 Water Types including 6 Different pH and Instant Hot Water',
+    description:
+      'This 50 LPH In-built RO + Alkaline Ionizer delivers Hydrogen-Rich Water (up to 1700 PPB) through 7 Platinum Coated TItanium Plates, featuring a Touch Screen and App-Control for 7 Water Types including 6 Different pH and Instant Hot Water',
     features: [
       '7 Platinum Coated Titanium Plates',
       '50 LPH In-built RO + UV + UF + Alkaline Ionizer + Instant Hot Water Technology',
@@ -335,41 +365,44 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '50 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Filtration': ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
+      'Filtration':
+        ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
       'Number of Plates': '7 Platinum Coated Titanium Plates',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8-11 pH',
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for RO': '60 Watts',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 15.5" ',
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 years Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '6',
     name: 'pHydrafyt Neo (UTC)',
+    slug: 'phydrafyt-neo',
+    metaTitle: 'pHydrafyt Neo UTC | Under-Sink Ionizer with Touch Faucet | Enpure',
+    metaDescription:
+      'pHydrafyt Neo (UTC) — Under-sink ionizer with touch-screen faucet, 6 pH options and up to 1700 PPB hydrogen. App-controlled hydration for modern kitchens.',
+    keywords: ['phydrafyt neo', 'utc ionizer', 'under sink ionizer', 'hydrogen water'],
     category: 'alkaline-ionizer',
     price: 239000,
     originalPrice: 249000,
     image: neo_hot,
-    gallery:[
-      neo_wo_faucet,
-      faucet,
-      neo_under_sink
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [neo_wo_faucet, faucet, neo_under_sink],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'Experience 6 Different pH Water Types and up to 1700 PPB Hydrogen-Rich Water dispensed via a Smart, App-controlled Touch Screen Faucet and App-Control for 6 Water Types with Under-the-Sink Ionizer unit.',
+    description:
+      'Experience 6 Different pH Water Types and up to 1700 PPB Hydrogen-Rich Water dispensed via a Smart, App-controlled Touch Screen Faucet and App-Control for 6 Water Types with Under-the-Sink Ionizer unit.',
     features: [
       '7 Platinum Coated Titanium Plates',
       '50 LPH In-built RO + UV + UF + Alkaline Ionizer Technology',
@@ -391,45 +424,49 @@ export const products: Product[] = [
       'High recovery rate of 70% - Water Saving Auto Revive Technology',
       'Smart Auto-Cleaning Machine',
       'Works without Electricity for Stored RO Water'
-    ], 
+    ],
     specifications: {
       'Purification Capacity': '50 L/hour',
-      'Applications': 'Under the Sink with Touch-Screen Display Smart Faucet (without Pressure Tank or Pump)',
-      'Filtration': ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
+      'Applications':
+        'Under the Sink with Touch-Screen Display Smart Faucet (without Pressure Tank or Pump)',
+      'Filtration':
+        ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 7 Platinum Coated Titanium Plates',
       'Number of Plates': '7 Platinum Coated Titanium Plates',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8-11 pH',
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for RO': '60 Watts',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 15.5" ',
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 Years Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '7',
     name: 'pHydrafyt Prime',
+    slug: 'phydrafyt-prime',
+    metaTitle: 'pHydrafyt Prime | 5-Plate Alkaline Ionizer with App Control | Enpure',
+    metaDescription:
+      'pHydrafyt Prime — 50 LPH RO + ionizer with 5 platinum plates, app control and up to 1700 PPB hydrogen. Premium compact ionizer for modern kitchens.',
+    keywords: ['phydrafyt prime', '5 plate ionizer', 'ionizer with app'],
     category: 'alkaline-ionizer',
     price: 205000,
     originalPrice: 215000,
     image: prime,
-    gallery:[
-      pro_hot,
-      prime_pro_counter,
-      prime_pro_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [pro_hot, prime_pro_counter, prime_pro_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'This 50 LPH In-built RO + Alkaline Ionizer with 5 Platinum Plates delivers 1700 PPB Hydrogen and 6 Different pH Water types via App-control and Touch Screen.',
+    description:
+      'This 50 LPH In-built RO + Alkaline Ionizer with 5 Platinum Plates delivers 1700 PPB Hydrogen and 6 Different pH Water types via App-control and Touch Screen.',
     features: [
       '5 Platinum Coated Titanium Plates',
       '50 LPH In-built RO + UV + UF + Alkaline Ionizer Technology',
@@ -455,40 +492,44 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '50 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Filtration': ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 5 Platinum Coated Titanium Plates',
+      'Filtration':
+        ' 3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + 5 Platinum Coated Titanium Plates',
       'Number of Plates': '5 Platinum Coated Titanium Plates',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8-11 pH',
       'Acidic pH Range': '3-6.5 pH',
       'Hydrogen Generation': 'Upto 1700 PPB',
       'ORP Level': 'Upto -900',
-      'ORP at 9pH': 'Upto -550', 
+      'ORP at 9pH': 'Upto -550',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption for RO': '60 Watts',
       'Power Consumption for Ionizer': '150 Watts',
-      'Operating Voltage':'230V (AC)',
+      'Operating Voltage': '230V (AC)',
       'Dimensions': '15.5" × 8" × 15.5" ',
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
     warranty: '5 Years Comprehensive Warranty (0% Maintenance Cost Upto 5 Years)',
-    installation: true,
+    installation: true
   },
   {
     id: '8',
-    name: 'EN-S-100',
+    name: 'S-100',
+    slug: 's-100',
+    metaTitle: 'S-100 | 20 LPH RO+UV+UF+Alkaline Purifier | Enpure',
+    metaDescription:
+      'S-100 — 20 LPH RO + UV + UF + Alkaline, 7L storage, auto TDS control and easy self-service filters. Compact and efficient purifier.',
+    keywords: ['s-100', '20 lph purifier', 'compact ro purifier'],
     category: 'ro-uv-uf-alkaline',
     price: 18900,
     originalPrice: 20900,
     image: s100,
-    gallery:[
-      xs_s_Wall,
-      s_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [xs_s_Wall, s_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: "Enjoy 8-Stage Purification (20LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
+    description:
+      "Enjoy 8-Stage Purification (20LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
     features: [
       '8-Stage Purification Process',
       '20 LPH RO + UV + UF + Alkaline Enhancement',
@@ -509,7 +550,8 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '20 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Filtration':'3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
+      'Filtration':
+        '3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
       'Storage Tank': '7 Liters',
       'Alkaline pH Range': '8.5-9 pH',
       'Input Water Pressure': '10-40 PSI',
@@ -519,22 +561,26 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '9',
-    name: 'EN-TNT-MAX',
+    name: 'TNT-MAX',
+    slug: 'tnt-max',
+    metaTitle: 'TNT-MAX | 3-Temperature RO+UV+UF+Alkaline System | Enpure',
+    metaDescription:
+      'TNT-MAX — 8-stage system with normal/hot/cold outlets, ozone vegetable cleaner and auto TDS control. Ideal for kitchens that need hot & cold dispensing.',
+    keywords: ['tnt max', 'hot cold purifier', 'ozone vegetable cleaner'],
     category: 'ro-uv-uf-alkaline',
     price: 28200,
     originalPrice: 28200,
     image: tntMax,
-    gallery:[
-      tnt_max_family
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [tnt_max_family],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'This 8-stage Purification System (RO+UV+UF+Alkaline) offers 3 Temperature Options (Normal, Hot, Cold) and includes a Dedicated Ozone Detoxifier for Vegetable Cleaning, all with Auto TDS Control',
+    description:
+      'This 8-stage Purification System (RO+UV+UF+Alkaline) offers 3 Temperature Options (Normal, Hot, Cold) and includes a Dedicated Ozone Detoxifier for Vegetable Cleaning, all with Auto TDS Control',
     features: [
       '8-Stage Purification Process',
       'RO + UV + UF + Alkaline Enhancement',
@@ -554,7 +600,8 @@ export const products: Product[] = [
     specifications: {
       'Purification Capacity': '20 L/hour',
       'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
-      'Storage Tank (Normal + Hot + Cold)': '9 Liters + 1 Liter + 0.8 Liter',
+      'Storage Tank (Normal + Hot + Cold)':
+        '9 Liters + 1 Liter + 0.8 Liter',
       'Alkaline pH Range': '8.5-9 pH',
       'Input Water Pressure': '10-40 PSI',
       'Power Consumption': '60 Watts',
@@ -563,23 +610,26 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '10',
-    name: 'EN-TNT-PRO',
+    name: 'TNT-PRO',
+    slug: 'tnt-pro',
+    metaTitle: 'TNT-PRO | Instant Hot RO+UV+UF Purifier | Enpure',
+    metaDescription:
+      'TNT-PRO — 8-stage purification with manual TDS control and instant normal/hot dispensing. Compact, digital and designed for busy kitchens.',
+    keywords: ['tnt pro', 'hot water purifier', 'manual tds control'],
     category: 'ro-uv-uf-alkaline',
     price: 20900,
     originalPrice: 24900,
     image: tntPro,
-    gallery:[
-      tnt_pro_white,
-      tnt_pro_wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [tnt_pro_white, tnt_pro_wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'This 8-stage purification system (RO+UV+UF+Alkaline) provides Manual TDS Control and instant Normal/Hot dispensing from two separate taps.',
+    description:
+      'This 8-stage purification system (RO+UV+UF+Alkaline) provides Manual TDS Control and instant Normal/Hot dispensing from two separate taps.',
     features: [
       '8-Stage Purification Process',
       'RO + UV + UF + Alkaline Enhancement',
@@ -607,20 +657,23 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '11',
-    name: 'EN-TNT',
+    name: 'TNT',
+    slug: 'tnt',
+    metaTitle: 'TNT | 8-Stage Alkaline Water Purifier | Enpure',
+    metaDescription:
+      'TNT — reliable 8-stage RO+UV+UF+Alkaline purifier with 10L storage and digital display. Compact and designer-friendly.',
+    keywords: ['tnt', '8 stage purifier', 'alkaline purifier'],
     category: 'ro-uv-uf-alkaline',
     price: 18900,
     originalPrice: 20900,
     image: tnt,
-    gallery:[
-      tnt_Wall
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [tnt_Wall],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
     description: '8-Stage Purification with Advanced Alkaline Enhancement for Optimal pH Balance and Mineral Retention',
     features: [
@@ -647,24 +700,26 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '12',
-    name: 'EN-TNT-100LPH',
+    name: 'Titan-100LPH',
+    slug: 'titan-100lph',
+    metaTitle: 'Titan-100LPH | 100 LPH Commercial Purifier | Enpure',
+    metaDescription:
+      'Titan-100LPH — 100 LPH commercial RO + UF system with dual pumps & membranes, designed for restaurants and small businesses.',
+    keywords: ['titan 100lph', 'commercial water purifier', '100 lph ro'],
     category: 'commercial',
     price: 54900,
     originalPrice: 59900,
     image: tnt100lph,
-    gallery:[
-      tnt100lphChefModernKitchen,
-      tnt200lphModernKitchenReal,
-      tnt200lphModernKitchen,
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [tnt100lphChefModernKitchen, tnt200lphModernKitchenReal, tnt200lphModernKitchen],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'High-Capacity 100 LPH Commercial Water Purification System Designed for Offices, Restaurants, and Small Businesses.',
+    description:
+      'High-Capacity 100 LPH Commercial Water Purification System Designed for Offices, Restaurants, and Small Businesses.',
     features: [
       '7-Stage Purification Process',
       'RO + UF',
@@ -686,22 +741,26 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   },
   {
     id: '13',
-    name: 'EN-TNT-50LPH',
+    name: 'Titan-50LPH',
+    slug: 'titan-50lph',
+    metaTitle: 'Titan-50LPH | 50 LPH Commercial Purifier | Enpure',
+    metaDescription:
+      'Titan-50LPH — 50 LPH commercial RO+UV+UF system with 10L storage, TDS display and manual TDS controller. Built for restaurants and offices.',
+    keywords: ['tnt 50lph', '50 lph commercial purifier', 'commercial ro purifier'],
     category: 'commercial',
     price: 39900,
     originalPrice: 44900,
     image: tnt50lph,
-    gallery:[
-      tnt50lphModernKitchen
-    ],
-    colors: ["Black","White"],
-    defaultColor: "Black",
+    gallery: [tnt50lphModernKitchen],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
-    description: 'High-Capacity 50 LPH Commercial Water Purification System Designed for Offices, Restaurants, and Small Businesses.',
+    description:
+      'High-Capacity 50 LPH Commercial Water Purification System Designed for Offices, Restaurants, and Small Businesses.',
     features: [
       '7-Stage Purification Process',
       'RO + UV + UF',
@@ -726,6 +785,6 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
-    installation: true,
+    installation: true
   }
 ];

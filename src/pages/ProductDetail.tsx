@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import { Star, ShoppingCart, Heart, Share2, Check, ChevronLeft, ChevronRight, Truck, Shield, Phone } from 'lucide-react';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -9,16 +10,16 @@ import { doc, getDoc, setDoc, onSnapshot, updateDoc, arrayUnion, arrayRemove, in
 import { auth, db } from '../firebase'; // your firebase export
 import { serverTimestamp } from "firebase/firestore";
 
-
 const ProductDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const product = products.find(p => p.id === id);
+  // ✅ Use slug from route instead of id
+  const { slug } = useParams<{ slug: string }>();
+  const product = products.find(p => p.slug === slug);
   const { addToCart } = useCart();
   const navigate = useNavigate();
   
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedDefaultColor, setSelectedDefaultColor] = useState( "Black");
+  const [selectedDefaultColor, setSelectedDefaultColor] = useState("Black");
   const [isOfferAvailable, setIsOfferAvailable] = useState(false);
   const [isCheckingOffers, setIsCheckingOffers] = useState(true);
   const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'reviews'>('description');
@@ -34,6 +35,7 @@ const ProductDetail = () => {
     notes: ''
   });
 
+  // If product not found — same UX as before
   if (!product) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -47,35 +49,64 @@ const ProductDetail = () => {
     );
   }
 
+  // Use the product.slug as a stable identifier for analytics & firestore
+  const firestoreID = product.id;
+
+  // ⭐ Update browser meta tags from product meta fields
+  useEffect(() => {
+    if (!product) return;
+
+    // Title
+    if (product.metaTitle) {
+      document.title = product.metaTitle;
+    } else {
+      document.title = product.name;
+    }
+
+    // Meta description — create or update
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = 'description';
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = product.metaDescription || '';
+
+    // Meta keywords — create or update
+    let metaKeywords = document.querySelector('meta[name="keywords"]') as HTMLMetaElement | null;
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.name = 'keywords';
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.content = (product.keywords || []).join(', ');
+  }, [product]);
+
   const handleAddToCart = () => {
     product.defaultColor = selectedDefaultColor;
     addToCart(product, quantity);
     
-    //Add to Cart GA-GTM
+    //Add to Cart GA-GTM (use slug as item_id)
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-    event: "add_to_cart",
-    ecommerce: {
-    currency: "INR",
-    value: product.price * quantity,
-    items: [{
-      item_id: product.id,
-      item_name: product.name,
-      price: product.price,
-      item_brand: "Enpure",
-      item_category: product.category,
-      quantity: quantity,
-      item_variant: product.defaultColor // if you added color
-    }],
-      item_id: product.id,
-      item_name: product.name,
-      item_category: product.category,
-      item_variant: product.defaultColor
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "INR",
+        value: product.price * quantity,
+        items: [{
+          item_id: product.slug,
+          item_name: product.name,
+          price: product.price,
+          item_brand: "Enpure",
+          item_category: product.category,
+          quantity: quantity,
+          item_variant: product.defaultColor // if you added color
+        }]
       }
     });
 
     product.defaultColor = "Black";
     navigate("/products");
-
   };
 
   //const currentUser = auth.currentUser;
@@ -91,138 +122,132 @@ const ProductDetail = () => {
   });
   const [postingReview, setPostingReview] = useState(false);
 
-  //Submit Review function
+  // Submit Review — uses firestoreID (slug) now
   const submitReview = async (e: React.FormEvent) => {
-  e.preventDefault();
-  const user = auth.currentUser;
-  if (!user) {
-    alert('Please sign in to post a review.');
-    return;
-  }
-
-  setPostingReview(true);
-  try {
-    const reviewsCol = collection(db, 'productFeedback', product.id, 'reviews');
-    await addDoc(reviewsCol, {
-      userId: user.uid,
-      userName: user.displayName || user.email || 'Anonymous',
-      rating: reviewForm.rating,
-      comment: reviewForm.comment.trim(),
-      createdAt: serverTimestamp()
-    });
-    setReviewForm({ rating: 5, comment: '' });
-  } catch (err) {
-    console.error('Error posting review:', err);
-    alert('Could not post review. Try again.');
-  } finally {
-    setPostingReview(false);
-  }
-};
-
-  //Like/Unlike function
-  const handleLike = async () => {
-  const user = auth.currentUser;
-  if (!user) {
-    alert('Please sign in to like products.');
-    return;
-  }
-
-  const feedbackRef = doc(db, 'productFeedback', product.id);
-  const userIdentifier = user.uid; // use uid to be robust
-
-  try {
-    if (hasLiked) {
-      // Unlike: remove uid from likedBy and decrement
-      await updateDoc(feedbackRef, {
-        likedBy: arrayRemove(userIdentifier),
-        likes: increment(-1)
-      });
-    } else {
-      // Like: add uid and increment
-      await updateDoc(feedbackRef, {
-        likedBy: arrayUnion(userIdentifier),
-        likes: increment(1)
-      });
-    }
-    // UI will update via realtime listener
-  } catch (err) {
-    console.error('Error toggling like:', err);
-  }
-};
-
-  //Real-time Listener for both likes and reviews
-  useEffect(() => {
-  if (!product) return;
-
-  //Product Detail Page - View Item GA-GTM
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "view_item",
-    ecommerce: {
-      currency: "INR",
-      value: product.price,
-      items: [{
-        item_id: product.id,
-        item_name: product.name,
-        price: product.price,
-        item_brand: "Enpure",
-        item_category: product.category
-      }],
-      item_id: product.id,
-      item_name: product.name,
-      item_category: product.category
-    }
-  });
-
-
-  const feedbackRef = doc(db, 'productFeedback', product.id);
-
-  // Ensure doc exists (create default doc if missing)
-  (async () => {
-    const snap = await getDoc(feedbackRef);
-    if (!snap.exists()) {
-      await setDoc(feedbackRef, { likes: 0, likedBy: [] });
-    }
-  })();
-
-  // Listen to feedback (likes + likedBy)
-  const unsubFeedback = onSnapshot(feedbackRef, (snap) => {
-    if (!snap.exists()) {
-      setLikes(0);
-      setHasLiked(false);
+    e.preventDefault();
+    const user = auth.currentUser;
+    if (!user) {
+      alert('Please sign in to post a review.');
       return;
     }
-    const data = snap.data() as any;
-    setLikes(data.likes ?? 0);
 
-    // setHasLiked based on uid or email (prefer uid)
-    const uid = auth.currentUser?.uid;
-    const userIdentifier = uid ?? auth.currentUser?.email;
-    setHasLiked(Array.isArray(data.likedBy) && userIdentifier ? data.likedBy.includes(userIdentifier) : false);
-  });
-
-  // Listen to reviews subcollection (ordered by timestamp)
-  const reviewsCol = collection(db, 'productFeedback', product.id, 'reviews');
-  const q = query(reviewsCol, orderBy('createdAt', 'desc'));
-  const unsubReviews = onSnapshotQuery(q, (snapshot) => {
-    const reviewsData: any[] = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
-    setReviews(reviewsData);
-
-     // Calculate average rating
-    if (reviewsData.length > 0) {
-      const avg = reviewsData.reduce((acc, r) => acc + (r.rating || 0), 0) / reviewsData.length;
-      setAverageRating(avg);
-    } else {
-      setAverageRating(0);
+    setPostingReview(true);
+    try {
+      const reviewsCol = collection(db, 'productFeedback', firestoreID, 'reviews');
+      await addDoc(reviewsCol, {
+        userId: user.uid,
+        userName: user.displayName || user.email || 'Anonymous',
+        rating: reviewForm.rating,
+        comment: reviewForm.comment.trim(),
+        createdAt: serverTimestamp()
+      });
+      setReviewForm({ rating: 5, comment: '' });
+    } catch (err) {
+      console.error('Error posting review:', err);
+      alert('Could not post review. Try again.');
+    } finally {
+      setPostingReview(false);
     }
-    
-  });
-
-  return () => {
-    unsubFeedback();
-    unsubReviews();
   };
-}, [product?.id]);
+
+  // Like/Unlike function (uses slug for feedback doc)
+  const handleLike = async () => {
+    const user = auth.currentUser;
+    if (!user) {
+      alert('Please sign in to like products.');
+      return;
+    }
+
+    const feedbackRef = doc(db, 'productFeedback', firestoreID);
+    const userIdentifier = user.uid; // use uid to be robust
+
+    try {
+      if (hasLiked) {
+        // Unlike: remove uid from likedBy and decrement
+        await updateDoc(feedbackRef, {
+          likedBy: arrayRemove(userIdentifier),
+          likes: increment(-1)
+        });
+      } else {
+        // Like: add uid and increment
+        await updateDoc(feedbackRef, {
+          likedBy: arrayUnion(userIdentifier),
+          likes: increment(1)
+        });
+      }
+      // UI will update via realtime listener
+    } catch (err) {
+      console.error('Error toggling like:', err);
+    }
+  };
+
+  // Real-time Listener for both likes and reviews — now using firestoreID dependency
+  useEffect(() => {
+    if (!product) return;
+
+    // Product Detail Page - View Item GA-GTM (use slug)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "view_item",
+      ecommerce: {
+        currency: "INR",
+        value: product.price,
+        items: [{
+          item_id: product.slug,
+          item_name: product.name,
+          price: product.price,
+          item_brand: "Enpure",
+          item_category: product.category
+        }]
+      }
+    });
+
+    const feedbackRef = doc(db, 'productFeedback', firestoreID);
+
+    // Ensure doc exists (create default doc if missing)
+    (async () => {
+      const snap = await getDoc(feedbackRef);
+      if (!snap.exists()) {
+        await setDoc(feedbackRef, { likes: 0, likedBy: [] });
+      }
+    })();
+
+    // Listen to feedback (likes + likedBy)
+    const unsubFeedback = onSnapshot(feedbackRef, (snap) => {
+      if (!snap.exists()) {
+        setLikes(0);
+        setHasLiked(false);
+        return;
+      }
+      const data = snap.data() as any;
+      setLikes(data.likes ?? 0);
+
+      // setHasLiked based on uid (prefer uid)
+      const uid = auth.currentUser?.uid;
+      setHasLiked(Array.isArray(data.likedBy) && uid ? data.likedBy.includes(uid) : false);
+    });
+
+    // Listen to reviews subcollection (ordered by timestamp)
+    const reviewsCol = collection(db, 'productFeedback', firestoreID, 'reviews');
+    const q = query(reviewsCol, orderBy('createdAt', 'desc'));
+    const unsubReviews = onSnapshotQuery(q, (snapshot) => {
+      const reviewsData: any[] = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+      setReviews(reviewsData);
+
+       // Calculate average rating
+      if (reviewsData.length > 0) {
+        const avg = reviewsData.reduce((acc, r) => acc + (r.rating || 0), 0) / reviewsData.length;
+        setAverageRating(avg);
+      } else {
+        setAverageRating(0);
+      }
+    });
+
+    return () => {
+      unsubFeedback();
+      unsubReviews();
+    };
+  }, [firestoreID]); // dependency: slug-based id
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -259,64 +284,62 @@ const ProductDetail = () => {
     }
   };
 
-  //Share to others function
+  // Share to others function
   const handleShare = async () => {
-  const shareData = {
-    title: product.name,
-    text: `Check out this amazing product: ${product.name} — only ₹${product.price.toLocaleString()} at Enpure!`,
-    url: window.location.href,
+    const shareData = {
+      title: product.name,
+      text: `Check out this amazing product: ${product.name} — only ₹${product.price.toLocaleString()} at Enpure!`,
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        console.log('Product shared successfully!');
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('🔗 Product link copied to clipboard!');
+      }
+    } catch (err) {
+      console.error('Error sharing:', err);
+    }
   };
 
-  try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-      console.log('Product shared successfully!');
-    } else {
-      await navigator.clipboard.writeText(window.location.href);
-      alert('🔗 Product link copied to clipboard!');
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50; // minimum swipe distance in px
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null); // Reset touch end
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+
+    if (distance > minSwipeDistance) {
+      // Swiped left → Next image
+      setSelectedImage(prev => (prev < images.length - 1 ? prev + 1 : 0))
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right → Previous image
+      setSelectedImage(prev => (prev > 0 ? prev - 1 : images.length - 1))
     }
-  } catch (err) {
-    console.error('Error sharing:', err);
-  }
-};
-
-const [touchStart, setTouchStart] = useState<number | null>(null);
-const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
-const minSwipeDistance = 50; // minimum swipe distance in px
-
-const onTouchStart = (e: React.TouchEvent) => {
-  setTouchEnd(null); // Reset touch end
-  setTouchStart(e.targetTouches[0].clientX);
-};
-
-const onTouchMove = (e: React.TouchEvent) => {
-  setTouchEnd(e.targetTouches[0].clientX);
-};
-
-const onTouchEnd = () => {
-  if (!touchStart || !touchEnd) return;
-  const distance = touchStart - touchEnd;
-
-  if (distance > minSwipeDistance) {
-    // Swiped left → Next image
-    //nextImage();
-    setSelectedImage(prev => (prev < images.length - 1 ? prev + 1 : 0))
-  } else if (distance < -minSwipeDistance) {
-    // Swiped right → Previous image
-    //prevImage();
-    setSelectedImage(prev => (prev > 0 ? prev - 1 : images.length - 1))
-  }
-};
+  };
 
   useEffect(() => {
     let retries = 0;
     const maxRetries = 5;
 
     const initRazorpayOffers = () => {
-      if (window.Razorpay && window.Razorpay.Offers) {
+      if ((window as any).Razorpay && (window as any).Razorpay.Offers) {
         try {
-          window.Razorpay.Offers.create({
+          (window as any).Razorpay.Offers.create({
             key: "rzp_test_RZnefzpGGa0MXe", // same key used for checkout
             amount: product.price * 100, // in paise
             currency: "INR",
@@ -349,7 +372,26 @@ const onTouchEnd = () => {
   const images = [product.image, ...product.gallery];
 
   return (
+    <>
+    <Helmet>
+        <title>{product.metaTitle}</title>
+        <meta name="description" content={product.metaDescription} />
+        <meta name="keywords" content={product.keywords?.join(", ")} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={product.metaTitle} />
+        <meta property="og:description" content={product.metaDescription} />
+        <meta property="og:image" content={product.image} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter */}
+        <meta name="twitter:title" content={product.metaTitle} />
+        <meta name="twitter:description" content={product.metaDescription} />
+        <meta name="twitter:image" content={product.image} />
+      </Helmet>
+
     <div className="min-h-screen bg-gray-50">
+      
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <br/>
@@ -866,43 +908,12 @@ const onTouchEnd = () => {
                   </div>
                 </div>
               )}
-
-
-              {/*
-              {activeTab === 'reviews' && (
-                <div className="space-y-6">
-                  {product.reviews.map(review => (
-                    <div key={review.id} className="border-b border-gray-100 pb-6 last:border-b-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-medium text-gray-900">{review.userName}</h4>
-                        <span className="text-sm text-gray-500">
-                          {new Date(review.date).toLocaleDateString()}
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < review.rating
-                                ? 'text-yellow-400 fill-current'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-gray-700">{review.comment}</p>
-                    </div>
-                    
-                  ))}
-                </div>
-              )}
-                */}
             </div>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

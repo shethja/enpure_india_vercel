@@ -59,7 +59,6 @@ const ProductCatalog = () => {
     return () => unsubscribers.forEach((unsub) => unsub());
   }, []);
   
-
 const filteredAndSortedProducts = useMemo(() => {
   const categoryOrder = {
     'alkaline-ionizer': 1,
@@ -307,7 +306,7 @@ const ProductListItem: React.FC<{ product: Product, ratingsData: any }> = ({ pro
             </div>
             
             <div className="flex space-x-2">
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/product/${product.slug}`}>
               <button className="modern-button glass-card text-black py-4 px-6 rounded-full hover:bg-blue-950 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 font-medium">
                 View Details
               </button>
