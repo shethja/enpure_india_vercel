@@ -113,10 +113,35 @@ const HomePage = () => {
       description: "Ionizer uses Auto-Cleaning Technology. Auto-cleaning ensures peak performance, maximum output and zero maintenance hassle. "
     }
   ];
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "DiHydro - Enpure & pHydrafyt",
+    url: "https://enpure.in",
+    logo: "https://enpure.in/path-to-logo.png",
+    sameAs: [
+      "https://www.instagram.com/enpureindia/",
+      "https://www.facebook.com/enpureindia/",
+      "https://www.linkedin.com/company/enpure-india/"
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-98255-22119",
+      contactType: "customer service",
+      areaServed: "IN"
+    }
+  };
+
   
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
         {/* Background Image */}

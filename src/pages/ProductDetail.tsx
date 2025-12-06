@@ -371,6 +371,38 @@ const ProductDetail = () => {
 
   const images = [product.image, ...product.gallery];
 
+  const productUrl = `https://enpure.in/product/${product.slug}`;
+  const productImage = product.image; // if full URL, even better
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: [productImage],
+    description: product.metaDescription || product.description,
+    sku: product.slug,
+    brand: {
+      "@type": "Brand",
+      name: "Enpure"
+    },
+    offers: {
+      "@type": "Offer",
+      url: productUrl,
+      priceCurrency: "INR",
+      price: product.price,
+      availability: "https://schema.org/InStock"
+    },
+    aggregateRating: reviews.length
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: averageRating.toFixed(1),
+          reviewCount: reviews.length
+        }
+      : undefined
+  };
+
+
+
   return (
     <>
     <Helmet>
@@ -391,7 +423,11 @@ const ProductDetail = () => {
       </Helmet>
 
     <div className="min-h-screen bg-gray-50">
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <br/>
