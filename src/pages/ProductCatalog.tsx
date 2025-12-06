@@ -263,6 +263,7 @@ const ProductListItem: React.FC<{ product: Product, ratingsData: any }> = ({ pro
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
             className="w-full h-64 md:h-full object-contain"
           />
         </div>

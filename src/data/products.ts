@@ -81,7 +81,7 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'pHydrafyt Neo+ (UTC)',
-    slug: 'phydrafyt-neo-utc',
+    slug: 'phydrafyt-neo-plus',
     metaTitle: 'pHydrafyt Neo+ UTC | App-Controlled Alkaline Ionizer | Enpure',
     metaDescription:
       'pHydrafyt Neo+ UTC — 7 pH options, up to 1700 PPB hydrogen, 7 platinum plates, touch-screen faucet & app control. Under-sink ionizer with instant hot water.',
@@ -209,12 +209,12 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'EN-XS-400',
-    slug: 'en-xs-400',
-    metaTitle: 'EN-XS-400 | 50 LPH RO+UV+UF+Alkaline Purifier | Enpure',
+    name: 'XS-400',
+    slug: 'xs-400',
+    metaTitle: 'XS-400 | 50 LPH RO+UV+UF+Alkaline Purifier | Enpure',
     metaDescription:
-      'EN-XS-400 — 8-stage purification, 50 LPH RO+UV+UF+Alkaline, auto TDS control and UV-protected 7L storage with self-serviceable filters.',
-    keywords: ['en-xs-400', '50 lph purifier', 'ro uv uf alkaline', 'self service filters'],
+      'XS-400 — 8-stage purification, 50 LPH RO+UV+UF+Alkaline, auto TDS control and UV-protected 7L storage with self-serviceable filters.',
+    keywords: ['xs-400', '50 lph purifier', 'ro uv uf alkaline', 'self service filters'],
     category: 'ro-uv-uf-alkaline',
     price: 28000,
     originalPrice: 29900,

@@ -421,6 +421,7 @@ const ProductDetail = () => {
                 <img
                   src={images[selectedImage]}
                   alt={product.name}
+                  loading="lazy"
                   className="w-full max-w-md h-auto object-contain rounded-lg mx-auto"
                 />
 
@@ -465,6 +466,7 @@ const ProductDetail = () => {
                       <img
                         src={image}
                         alt={`${product.name} ${index + 1}`}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </button>

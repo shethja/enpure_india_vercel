@@ -124,6 +124,7 @@ const HomePage = () => {
           <img
             src={heroImage}
             alt="Pure water background"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-800/60"></div>
@@ -183,6 +184,7 @@ const HomePage = () => {
                    <img
                     src={benefit.image}
                     alt={benefit.title}
+                    loading="lazy"
                     className="h-80 w-80 object-cover drop-shadow-md rounded-3xl"
                     />
                 </div>
@@ -249,6 +251,7 @@ const HomePage = () => {
             <img
               src={purifyProcess1}
               alt="7-Layer Filtration"
+              loading="lazy"
               className="w-full max-w-[500px] h-auto lg:mx-20 object-cover rounded-3xl shadow-md"
             /><br/>
             <h3 className="text-2xl md:text-3xl font-semibold text-center mb-3">7-Layer Filtration</h3>
@@ -415,6 +418,7 @@ const HomePage = () => {
                   <img
                     src={post.image}
                     alt={post.title}
+                    loading="lazy"
                     className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
@@ -455,6 +459,7 @@ const HomePage = () => {
           <img
             src={ctaImage}
             alt="Pure water lifestyle"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-800/60"></div>

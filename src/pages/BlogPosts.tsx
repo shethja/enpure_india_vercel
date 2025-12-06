@@ -135,6 +135,7 @@ const BlogPosts = () => {
           <img
             src={blogHardcoded.image}
             alt={blog.title}
+            loading="lazy"
             className="w-full h-auto rounded-3xl object-cover mb-10"
           />
           <div className="text-blue-500 text-md mb-3">
