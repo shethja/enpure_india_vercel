@@ -23,6 +23,7 @@ import Terms from './pages/Terms';
 import Testimonials from './pages/Testimonials';
 import Installation from './pages/Installation';
 import Partnership from './pages/Partnership';
+import PhoneLogin from './pages/PhoneLogin';
 import OrderConfirmation from './pages/OrderConfirmation';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
@@ -74,6 +75,7 @@ function App() {
                 <Route path="/shipping-policy" element={<ShippingPolicy />} />
                 <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
                 <Route path="/partnership" element={<Partnership />} />
+                <Route path="/login-phone" element={<PhoneLogin />} />
                 {/*<Route path="/uploadProducts" element={<UploadProducts />} /> */}
                 {/*<ToastContainer position="top-center" autoClose={2000} /> */}
               </Routes>

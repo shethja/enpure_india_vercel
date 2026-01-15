@@ -136,7 +136,7 @@ const Header = () => {
                       </>
                     ) : (
                       <>
-                        <DropdownItem to="/login" onClick={() => setIsUserMenuOpen(false)}>
+                        <DropdownItem to="/login-phone" onClick={() => setIsUserMenuOpen(false)}>
                           Login
                         </DropdownItem>
                         <DropdownItem to="/register" onClick={() => setIsUserMenuOpen(false)}>

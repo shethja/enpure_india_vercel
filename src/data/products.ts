@@ -31,7 +31,7 @@ import tnt100lphChef from '../assets/tnt_100lph_chef.png';
 import tnt50lphWall from '../assets/tnt_50lph_wall.png';
 import tnt50lphChef from '../assets/tnt_50lph_chef.png';
 import tnt200lphModernKitchenReal from '../assets/200lph_modernKitchen.png';
-import tnt50lphModernKitchen from '../assets/tnt_50lph_modernKitchen.png';
+import tnt50lphModernKitchen from '../assets/tnt_50lph_chef_modernKitchen.png';
 import tnt200lphModernKitchen from '../assets/tnt_200lph_modernKitchen.png';
 import tnt100lphChefModernKitchen from '../assets/tnt_100lph_chef_modernKitchen.png';
 import neo_hot_water from '../assets/neo+_hotWater_family.png';
@@ -86,7 +86,7 @@ export const products: Product[] = [
     metaDescription:
       'pHydrafyt Neo+ UTC — 7 pH options, up to 1700 PPB hydrogen, 7 platinum plates, touch-screen faucet & app control. Under-sink ionizer with instant hot water.',
     keywords: [
-      'phydrafyt neo',
+      'phydrafyt neo+',
       'under-sink ionizer',
       'hydrogen water',
       'ionizer with faucet',
@@ -621,7 +621,7 @@ export const products: Product[] = [
       'TNT-PRO — 8-stage purification with manual TDS control and instant normal/hot dispensing. Compact, digital and designed for busy kitchens.',
     keywords: ['tnt pro', 'hot water purifier', 'manual tds control'],
     category: 'ro-uv-uf-alkaline',
-    price: 20900,
+    price: 21100,
     originalPrice: 24900,
     image: tntPro,
     gallery: [tnt_pro_white, tnt_pro_wall],

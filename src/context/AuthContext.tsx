@@ -6,9 +6,14 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   updateProfile,
+  signInWithPhoneNumber,
+  RecaptchaVerifier,
+  PhoneAuthProvider,
+  EmailAuthProvider,
+  linkWithCredential,
   User as FirebaseUser,
 } from "firebase/auth";
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, getDoc } from 'firebase/firestore';
 
 interface User {
   id: string;
@@ -25,6 +30,8 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   register: (userData: Omit<User, "id"> & { password: string }) => Promise<void>;
   logout: () => Promise<void>;
+  phoneLogin: (phone: string) => Promise<void>;
+  verifyOTP: (otp: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -52,9 +59,28 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     console.log("🔹 AuthContext mounted — Listening for Firebase user changes");
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      const normalized = normalizeUser(firebaseUser);
-      setUser(normalized);
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (!firebaseUser) {
+        setUser(null);
+        setLoading(false);
+        return;
+      }
+
+      const userRef = doc(db, "users", firebaseUser.uid);
+      const snap = await getDoc(userRef);
+
+      if (!snap.exists()) {
+        await setDoc(userRef, {
+          uid: firebaseUser.uid,
+          name: firebaseUser.displayName || "",
+          email: firebaseUser.email || "",
+          phone: firebaseUser.phoneNumber || "",
+          address: "",
+          createdAt: new Date().toISOString(),
+        });
+      }
+
+      setUser(normalizeUser(firebaseUser));
       setLoading(false);
     });
     return unsubscribe;
@@ -94,6 +120,41 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const phoneLogin = async (phone: string) => {
+    if(!window.recaptchaVerifier){
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
+        "recaptcha-container",
+        { size: "invisible" },
+      );
+    }
+
+    const confirmation = await signInWithPhoneNumber(auth, phone, window.recaptchaVerifier);
+    window.confirmationResult = confirmation;
+  };
+
+  const verifyOTP = async (otp: string) => {
+    
+    if (!window.confirmationResult) {
+    throw new Error("OTP session expired. Please request a new OTP.");
+    }
+
+    const result = await window.confirmationResult.confirm(otp);
+
+    await setDoc(
+      doc(db, "users", result.user.uid),
+      {
+        uid: result.user.uid,
+        phone: result.user.phoneNumber,
+        email: result.user.email || "",
+        name: result.user.displayName || "",
+        createdAt: new Date().toISOString(),
+      },
+      { merge: true }
+    );
+  };
+
+
   const logout = async () => {
     await signOut(auth);
     console.log('Successfully logged out...');
@@ -109,6 +170,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         login,
         register,
         logout,
+        phoneLogin,
+        verifyOTP,
       }}
     >
       {!loading ? (

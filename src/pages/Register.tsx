@@ -19,8 +19,6 @@ export default function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    address: "",
     password: "",
     confirmPassword: "",
   });
@@ -85,9 +83,7 @@ export default function Register() {
     await register({
       name: formData.name,
       email: formData.email,
-      password: formData.password,
-      phone: formData.phone,
-      address: formData.address
+      password: formData.password
     });
 
       console.log("Registration successful! Navigating to homepage...");
@@ -220,54 +216,6 @@ export default function Register() {
                   onChange={handleChange}
                   className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   placeholder="Enter your email"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Phone Number
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="address"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Address
-              </label>
-              <div className="relative">
-                <div className="absolute top-3 left-0 pl-4 flex items-start pointer-events-none">
-                  <MapPin className="h-5 w-5 text-gray-400" />
-                </div>
-                <textarea
-                  id="address"
-                  name="address"
-                  required
-                  value={formData.address}
-                  onChange={handleChange}
-                  rows={3}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-3xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                  placeholder="Enter your complete address"
                 />
               </div>
             </div>
@@ -423,10 +371,23 @@ export default function Register() {
                 to="/login"
                 className="text-blue-600 hover:text-blue-500 font-semibold transition-colors duration-200"
               >
-                Sign In
+                Log In (using Email)
               </Link>
             </p>
           </div>
+
+          <div className="mt-2 text-center">
+            <p className="text-gray-600">
+              Login via Phone{" "}
+              <Link
+                to="/login-phone"
+                className="text-blue-600 hover:text-blue-500 font-semibold transition-colors duration-200"
+              >
+                Click Here
+              </Link>
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

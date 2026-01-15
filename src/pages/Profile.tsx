@@ -13,7 +13,6 @@ const Profile: React.FC = () => {
     name: "",
     email: "",
     phone: "",
-    address: "",
   });
   const [editMode, setEditMode] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -36,7 +35,6 @@ const Profile: React.FC = () => {
             name: user.name || "",
             email: user.email || "",
             phone: "",
-            address: "",
           });
         }
       } catch (error) {
@@ -127,14 +125,15 @@ const Profile: React.FC = () => {
                   name="email"
                   type="email"
                   value={formData.email}
-                  disabled
+                  onChange={handleChange}
+                  disabled={!editMode}
                   className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   placeholder="Enter your email"
                 />
               </div>
             </div>
 
-          {/* Phone */}
+           {/* Phone */}
           <div>
               <label
                 htmlFor="phone"
@@ -158,31 +157,6 @@ const Profile: React.FC = () => {
                 />
               </div>
             </div>
-
-          {/* Address */}
-          <div>
-              <label
-                htmlFor="address"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Address
-              </label>
-              <div className="relative">
-                <div className="absolute top-3 left-0 pl-4 flex items-start pointer-events-none">
-                  <MapPin className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  disabled={!editMode}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-3xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                  placeholder="Enter your complete address"
-                />
-              </div>
-            </div>
-
 
           {/* Buttons */}
           <div className="pt-4">

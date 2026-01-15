@@ -156,6 +156,17 @@ export default function Login() {
               </Link>
             </p>
           </div>
+          <div className="mt-2 text-center">
+            <p className="text-gray-600">
+              Login via Phone{" "}
+              <Link
+                to="/login-phone"
+                className="text-blue-600 hover:text-blue-500 font-semibold transition-colors duration-200"
+              >
+                Click Here
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>
