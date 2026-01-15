@@ -62,10 +62,10 @@ const Profile: React.FC = () => {
       const userRef = doc(db, "users", user.id);
       await updateDoc(userRef, { ...formData });
       setEditMode(false);
-      alert("✅ Profile updated successfully!");
+      //alert("✅ Profile updated successfully!");
     } catch (error) {
       console.error("❌ Error updating profile:", error);
-      alert("Something went wrong while updating.");
+      //alert("Something went wrong while updating.");
     } finally {
       setSaving(false);
     }
