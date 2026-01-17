@@ -31,10 +31,15 @@ export default function PhoneLogin() {
 
   
   const sendOTP = async () => {
-  if (!phone) {
-    alert("Enter phone number");
+    if (!phone) {
+        alert("Enter phone number");
+        return;
+    }
+  
+    if (phone.length !== 10) {
+    alert("Please enter a valid 10-digit mobile number");
     return;
-  }
+    }
 
   try {
     setLoading(true);
@@ -45,10 +50,11 @@ export default function PhoneLogin() {
       alert("reCAPTCHA not initialized");
       return;
     }
-
+    
+    const fullPhone = `+91${phone}`;
     const confirmationResult = await signInWithPhoneNumber(
       auth,
-      phone,
+      fullPhone,
       appVerifier
     );
 
@@ -85,11 +91,33 @@ export default function PhoneLogin() {
             <label className="text-sm mb-2 block font-semibold">Phone Number</label>
             <div className="relative mb-4">
               <Phone className="absolute left-3 top-3 text-gray-400" />
+
+               {/* +91 Prefix */}
+               <span className="absolute left-10 top-3 text-gray-500 text-medium font-semibold">
+                +91
+               </span>
+              
+              {/*
               <input
                 className="w-full pl-10 py-3 rounded-full border"
                 placeholder="Enter in format: '+91XXXXXXXXXX'"
                 onChange={(e) => setPhone(e.target.value)}
               />
+              */}
+
+              <input
+                type="tel"
+                maxLength={10}
+                inputMode="numeric"
+                pattern="[0-9]*"
+                className="w-full pl-20 py-3 rounded-full border focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter 10-digit mobile number"
+                value={phone}
+                onChange={(e) =>
+                setPhone(e.target.value.replace(/\D/g, ""))
+                }
+              />
+
             </div>
 
             <button
