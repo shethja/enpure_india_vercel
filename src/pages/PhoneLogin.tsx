@@ -11,9 +11,9 @@ export default function PhoneLogin() {
   const [step, setStep] = useState<1 | 2>(1);
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
- 
+
   useEffect(() => {
   if (!window.recaptchaVerifier) {
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -54,7 +54,6 @@ export default function PhoneLogin() {
 
     window.confirmationResult = confirmationResult;
     setOtpSent(true);
-
     //alert("OTP sent successfully!");
     setStep(2);
   } catch (error: any) {
@@ -95,9 +94,14 @@ export default function PhoneLogin() {
 
             <button
               onClick={sendOTP}
-              className="w-full modern-button bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-6 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              disabled={loading}
+              //className="w-full modern-button bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-6 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full modern-button bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-6 rounded-full font-semibold
+               hover:from-blue-700 hover:to-cyan-700 focus:ring-4 focus:ring-blue-200
+               transition-all duration-200 transform hover:scale-105
+               disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none" 
             >
-              Send OTP
+              {loading ? "Sending OTP..." : "Send OTP"}
             </button>
 
             <div className="mt-8 text-center">
@@ -116,7 +120,7 @@ export default function PhoneLogin() {
 
         {step === 2 && (
           <>
-            <label className="text-sm mb-2 block font-semibold">OTP Sent Successfully - Enter OTP</label>
+            <label className="text-sm mb-2 block font-semibold">Enter OTP</label>
             <div className="relative mb-4">
               <KeyRound className="absolute left-3 top-3 text-gray-400" />
               <input
