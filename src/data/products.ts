@@ -146,7 +146,7 @@ export const products: Product[] = [
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 Years Comprehensive Warranty',
     installation: true
   },
   {
@@ -204,7 +204,7 @@ export const products: Product[] = [
       'Weight': '3.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 Years Comprehensive Warranty',
     installation: true
   },
   {
@@ -318,7 +318,7 @@ export const products: Product[] = [
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 years Comprehensive Warranty',
     installation: true
   },
   {
@@ -382,7 +382,7 @@ export const products: Product[] = [
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 years Comprehensive Warranty',
     installation: true
   },
   {
@@ -446,7 +446,7 @@ export const products: Product[] = [
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 Years Comprehensive Warranty',
     installation: true
   },
   {
@@ -509,7 +509,7 @@ export const products: Product[] = [
       'Weight': '8.5 kg',
       'Warranty': '5 Years'
     },
-    warranty: '5 Years Warranty',
+    warranty: '5 Years Comprehensive Warranty (0% Maintenance Cost Upto 5 Years)',
     installation: true
   },
   {
@@ -521,7 +521,7 @@ export const products: Product[] = [
       'S-100 — 20 LPH RO + UV + UF + Alkaline, 7L storage, auto TDS control and easy self-service filters. Compact and efficient purifier.',
     keywords: ['s-100', '20 lph purifier', 'compact ro purifier'],
     category: 'ro-uv-uf-alkaline',
-    price: 20900,
+    price: 18900,
     originalPrice: 20900,
     image: s100,
     gallery: [xs_s_Wall, s_wall],
@@ -621,7 +621,7 @@ export const products: Product[] = [
       'TNT-PRO — 8-stage purification with manual TDS control and instant normal/hot dispensing. Compact, digital and designed for busy kitchens.',
     keywords: ['tnt pro', 'hot water purifier', 'manual tds control'],
     category: 'ro-uv-uf-alkaline',
-    price: 24900,
+    price: 21100,
     originalPrice: 24900,
     image: tntPro,
     gallery: [tnt_pro_white, tnt_pro_wall],
@@ -668,7 +668,7 @@ export const products: Product[] = [
       'TNT — reliable 8-stage RO+UV+UF+Alkaline purifier with 10L storage and digital display. Compact and designer-friendly.',
     keywords: ['tnt', '8 stage purifier', 'alkaline purifier'],
     category: 'ro-uv-uf-alkaline',
-    price: 20900,
+    price: 18900,
     originalPrice: 20900,
     image: tnt,
     gallery: [tnt_Wall],

@@ -686,6 +686,7 @@ const ProductDetail = () => {
                     <span className="text-sm text-gray-700">24/7 Support</span>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>
