@@ -86,7 +86,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       //toast.info("Please log in to add products to your cart.")
       //setTimeout(() => navigate('/login'), 1500); // ✅ redirect if user not logged in
       alert("Please log in to add products to your cart.")
-      navigate('/login');
+      navigate('/login-phone');
       return;
     }
 
