@@ -42,6 +42,12 @@ import tnt_pro_wall from '../assets/tnt_pro_wall.png';
 import tnt_pro_white from '../assets/tnt_pro_wh.png';
 import tnt_max_family from '../assets/tnt_max_family.png';
 import s_wall from '../assets/s_wall.png';
+import partsPricing_s100 from '../assets/partsPricing_s100.png';
+import partsPricing_xs400 from '../assets/partsPricing_xs400.png';
+import partsPricing_tnt from '../assets/partsPricing_tnt.png';
+import partsPricing_tntmax from '../assets/partsPricing_tntmax.png';
+import partsPricing_tntpro from '../assets/partsPricing_tntpro.png';
+
 
 export interface Product {
   id: string;
@@ -219,7 +225,7 @@ export const products: Product[] = [
     price: 29900,
     originalPrice: 29900,
     image: xs400,
-    gallery: [xs_s_Wall, s_wall],
+    gallery: [xs_s_Wall, s_wall, partsPricing_xs400],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
@@ -524,7 +530,7 @@ export const products: Product[] = [
     price: 18900,
     originalPrice: 20900,
     image: s100,
-    gallery: [xs_s_Wall, s_wall],
+    gallery: [xs_s_Wall, s_wall, partsPricing_s100],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
@@ -575,7 +581,7 @@ export const products: Product[] = [
     price: 28200,
     originalPrice: 28200,
     image: tntMax,
-    gallery: [tnt_max_family],
+    gallery: [tnt_max_family, partsPricing_tntmax],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
@@ -624,7 +630,7 @@ export const products: Product[] = [
     price: 21100,
     originalPrice: 24900,
     image: tntPro,
-    gallery: [tnt_pro_white, tnt_pro_wall],
+    gallery: [tnt_pro_white, tnt_pro_wall, partsPricing_tntpro],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
@@ -671,7 +677,7 @@ export const products: Product[] = [
     price: 18900,
     originalPrice: 20900,
     image: tnt,
-    gallery: [tnt_Wall],
+    gallery: [tnt_Wall, partsPricing_tnt],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',
