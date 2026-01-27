@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Grid, List } from 'lucide-react';
+import { Search, Grid, List, Star } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -287,19 +287,23 @@ const ProductListItem: React.FC<{ product: Product, ratingsData: any }> = ({ pro
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <svg
+                {[...Array(5)].map((_, i) => {
+                const filled = i < Math.floor(productRating.avg);
+                const halfFilled = i < productRating.avg && i >= Math.floor(productRating.avg);
+              
+                 return (
+                  <Star
                     key={i}
                     className={`h-4 w-4 ${
-                      i < Math.floor(productRating.avg)
-                        ? 'text-yellow-400 fill-current'
-                        : 'text-gray-300'
-                    }`}
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
+                    filled
+                    ? 'text-yellow-400 fill-current'
+                    : halfFilled
+                    ? 'text-yellow-300 fill-current opacity-70'
+                    : 'text-gray-300'
+                   }`}
+                   />
+                    );
+                })}
               </div>
               <span className="text-sm text-gray-600">
                   ({productRating.count || 0} reviews)

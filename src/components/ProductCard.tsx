@@ -121,16 +121,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           
           <div className="flex items-center mb-4">
             <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-4 w-4 ${
-                    i < Math.floor(averageRating)
-                      ? 'text-yellow-500 fill-current'
-                      : 'text-gray-300'
-                  }`}
-                />
-              ))}
+              {[...Array(5)].map((_, i) => {
+                const filled = i < Math.floor(averageRating);
+                const halfFilled = i < averageRating && i >= Math.floor(averageRating);
+              
+                 return (
+                  <Star
+                    key={i}
+                    className={`h-4 w-4 ${
+                    filled
+                    ? 'text-yellow-400 fill-current'
+                    : halfFilled
+                    ? 'text-yellow-300 fill-current opacity-70'
+                    : 'text-gray-300'
+                   }`}
+                   />
+                    );
+                })}
             </div>
             <span className="text-sm text-gray-500 ml-2">
               ({reviews.length})

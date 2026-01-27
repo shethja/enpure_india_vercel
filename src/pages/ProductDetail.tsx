@@ -687,6 +687,16 @@ const ProductDetail = () => {
                   </div>
                 </div>
                 
+                 {/* Warranty Explanation */}
+                  {product.warranty === '1 + 4* Year Warranty (*T&C Apply)' && (
+                    <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                      <span className="font-semibold">*</span> The 1st year includes full product
+                      warranty covering manufacturing and functional defects. The subsequent
+                      4 years are service warranty, during which no service charges apply;
+                      customers are required to pay only for parts replaced, if any.
+                    </p>
+                  )}
+                
               </div>
             </div>
           </div>
