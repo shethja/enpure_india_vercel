@@ -529,7 +529,7 @@ export const products: Product[] = [
     category: 'ro-uv-uf-alkaline',
     price: 18900,
     originalPrice: 20900,
-    image: s100,
+    image: xs400,
     gallery: [xs_s_Wall, s_wall, partsPricing_s100],
     colors: ['Black', 'White'],
     defaultColor: 'Black',
