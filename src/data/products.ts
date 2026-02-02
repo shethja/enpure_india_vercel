@@ -23,6 +23,11 @@ import prime_pro_hot from '../assets/Prime_Pro_Pro+.png';
 import prime_pro_wall from '../assets/Prime_Pro_Wall.png';
 import neo_under_sink from '../assets/Neo_Neo+.png';
 import neo_wo_faucet from '../assets/pHYDRAFYT NEO+.png';
+import kraft_black from '../assets/kraft_black.png';
+import kraft_red from '../assets/kraft_red.png';
+import kraft_white from '../assets/kraft_white.png';
+import pro5g from '../assets/5gpro_white.png';
+import katds from '../assets/katds.png'; 
 //import tntMax_Wall from '../assets/tntMax_wall.png';
 import tnt_Wall from '../assets/tnt_wall.png';
 import xs_s_Wall from '../assets/xs_s_wall.png';
@@ -47,7 +52,19 @@ import partsPricing_xs400 from '../assets/partsPricing_xs400.png';
 import partsPricing_tnt from '../assets/partsPricing_tnt.png';
 import partsPricing_tntmax from '../assets/partsPricing_tntmax.png';
 import partsPricing_tntpro from '../assets/partsPricing_tntpro.png';
-
+import s_xs_faucet from '../assets/s_xs_faucet.png';
+import partsPricing_katds from '../assets/partsPricing_katds.png';
+import partsPricing_5gpro from '../assets/partsPricing_5gpro.png';
+import partsPricing_kraft_core from '../assets/partsPricing_kraft_core.png';
+import partsPricing_kraft_iq from '../assets/partsPricing_kraft_iq.png';
+import partsPricing_kraft_blaze from '../assets/partsPricing_kraft_blaze.png';
+import s100_utc_kitchen from '../assets/s100_utc_kitchen.png';
+import xs400_utc_kitchen from '../assets/xs400_utc_kitchen.png';
+import katds_kitchen from '../assets/katds_kitchen.png';
+import pro5g_kitchen from '../assets/pro5g_kitchen.png';
+import kraft_red_kitchen from '../assets/kraft_red_kitchen.png';
+import kraft_white_kitchen from '../assets/kraft_white_kitchen.png';
+import kraft_black_kitchen from '../assets/kraft_black_kitchen.png'; 
 
 export interface Product {
   id: string;
@@ -791,6 +808,338 @@ export const products: Product[] = [
       'Warranty': '1 Year'
     },
     warranty: '1 Year Comprehensive Warranty',
+    installation: true
+  },
+  {
+    id: '14',
+    name: 'Kraft Core',
+    slug: 'kraft-core',
+    metaTitle: 'Kraft Core | 8-Stage Alkaline Water Purifier | Enpure',
+    metaDescription:
+      'Kraft Core — reliable 8-stage RO+UV+UF+Alkaline purifier with 10L storage, in-built pre-filter and digital display. Compact and designer-friendly.',
+    keywords: ['core', '8 stage purifier', 'alkaline purifier', 'inbuilt prefilter'],
+    category: 'ro-uv-uf-alkaline',
+    price: 18900,
+    originalPrice: 18900,
+    image: kraft_red,
+    gallery: [kraft_white, kraft_black, kraft_red_kitchen, partsPricing_kraft_core],
+    colors: ['Black', 'White', 'Red'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description: '8-Stage Purification with Advanced Alkaline Enhancement and In-built Pre-Filter for Optimal pH Balance and Mineral Retention',
+    features: [
+      '8-Stage Purification Process',
+      'RO + UV + UF + Alkaline Enhancement',
+      'In-Built Pre-Filter',
+      'Manual TDS Control',
+      'Storage Capacity - 10L',
+      'TDS and Temperature Display',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Digital System',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank': '10 Liters',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions (HxDxW)': '21" × 9" × 15" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '15',
+    name: 'Kraft IQ',
+    slug: 'kraft-iq',
+    metaTitle: 'Kraft IQ | 8-Stage Alkaline Water Purifier | Enpure',
+    metaDescription:
+      'Kraft IQ — reliable 8-stage RO+UV+UF+Alkaline purifier with 10L storage, in-built pre-filter, auto-tds and digital display. Compact and designer-friendly.',
+    keywords: ['iq', '8 stage purifier', 'alkaline purifier', 'inbuilt prefilter', 'auto-tds'],
+    category: 'ro-uv-uf-alkaline',
+    price: 21900,
+    originalPrice: 21900,
+    image: kraft_white,
+    gallery: [kraft_red, kraft_black, kraft_white_kitchen, partsPricing_kraft_iq],
+    colors: ['Black', 'White', 'Red'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description: '8-Stage Purification with Advanced Alkaline Enhancement, Auto-TDS and In-built Pre-Filter for Optimal pH Balance and Mineral Retention',
+    features: [
+      '8-Stage Purification Process',
+      'RO + UV + UF + Alkaline Enhancement',
+      'In-Built Pre-Filter',
+      'Auto TDS Control',
+      'Storage Capacity - 10L',
+      'TDS and Temperature Display',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Digital System',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank': '10 Liters',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions(HxDxW)': '21" × 9" × 15" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '16',
+    name: 'Kraft Blaze',
+    slug: 'kraft-blaze',
+    metaTitle: 'Kraft Blaze | 8-Stage Alkaline Water Purifier | Enpure',
+    metaDescription:
+      'Kraft Blaze — reliable 8-stage RO+UV+UF+Alkaline purifier with 10L storage, in-built pre-filter, hot water and digital display. Compact and designer-friendly.',
+    keywords: ['blaze', '8 stage purifier', 'alkaline purifier', 'inbuilt prefilter', 'hot water'],
+    category: 'ro-uv-uf-alkaline',
+    price: 25900,
+    originalPrice: 25900,
+    image: kraft_black,
+    gallery: [kraft_red, kraft_white, kraft_black_kitchen, partsPricing_kraft_blaze],
+    colors: ['Black', 'White', 'Red'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description: '8-Stage Purification with Advanced Alkaline Enhancement and In-built Pre-Filter for Optimal pH Balance and Mineral Retention, including Hot Water',
+    features: [
+      '8-Stage Purification Process',
+      'RO + UV + UF + Alkaline Enhancement',
+      'In-Built Pre-Filter',
+      'Manual TDS Control',
+      'Hot Water',
+      'Normal Water Storage - 10L',
+      'Hot Water Storage - 1L',
+      'TDS and Temperature Display',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Digital System',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank (Normal + Hot)': '9 Liters + 1 Liter',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions(HxDxW)': '21" × 9" × 15" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '17',
+    name: '5G-PRO',
+    slug: '5g-pro',
+    metaTitle: '5g-pro | 3-Temperature RO+UV+UF+Alkaline System | Enpure',
+    metaDescription:
+      '5G-PRO — 8-stage system with normal/hot/cold outlets and ozone vegetable cleaner. Ideal for kitchens that need hot & cold dispensing.',
+    keywords: ['5g pro', 'hot cold purifier', 'ozone vegetable cleaner'],
+    category: 'ro-uv-uf-alkaline',
+    price: 30900,
+    originalPrice: 30900,
+    image: pro5g,
+    gallery: [pro5g_kitchen, partsPricing_5gpro],
+    colors: ['Black', 'White', 'Red', 'Blue'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description:
+      'This 8-stage Purification System (RO+UV+UF+Alkaline) offers 3 Temperature Options (Normal, Hot, Cold) and includes a Dedicated Ozone Detoxifier for Vegetable Cleaning.',
+    features: [
+      '8-Stage Purification Process',
+      'RO + UV + UF + Alkaline Enhancement',
+      'Vegetable Cleaner/ Ozone Detoxifier',
+      'Child Lock for Hot Water',
+      'Finger Touch Display',
+      'Manual TDS Control',
+      '3 Water Types - Normal/Hot/Cold',
+      'Normal Water Storage - 7L',
+      'Hot Water Storage - 1L',
+      'Cold Water Storage - 0.8L',
+      'TDS and Temperature Display',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Digital Monitor Screen',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank (Normal + Hot + Cold)':
+        '9 Liters + 1 Liter + 0.8 Liter',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions(HxDxW)': '16" × 11" × 20" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '18',
+    name: 'Krystal-ATDS',
+    slug: 'krystal-atds',
+    metaTitle: 'krystal-atds | 8-Stage Alkaline Water Purifier | Enpure',
+    metaDescription:
+      'Krystal-ATDS — reliable 8-stage RO+UV+UF+Alkaline purifier with 7L storage and digital display. Compact and designer-friendly.',
+    keywords: ['krystal auto tds', '8 stage purifier', 'alkaline purifier'],
+    category: 'ro-uv-uf-alkaline',
+    price: 18900,
+    originalPrice: 18900,
+    image: katds,
+    gallery: [katds_kitchen, partsPricing_katds],
+    colors: ['TRP Blue'],
+    defaultColor: 'TRP Blue',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description: '8-Stage Purification with Advanced Alkaline Enhancement for Optimal pH Balance and Mineral Retention',
+    features: [
+      '8-Stage Purification Process',
+      'RO + UV + UF + Alkaline Enhancement',
+      'Auto TDS Control',
+      'Storage Capacity - 14L',
+      'TDS and Temperature Display',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Digital Monitor Screen',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Storage Tank': '14 Liters',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions(HxDxW)': '21" × 8" × 15" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '19',
+    name: 'XS-400+ (UTC)',
+    slug: 'xs-400-plus',
+    metaTitle: 'XS-400+ | 50 LPH UTC RO+UV+UF+Alkaline Purifier | Enpure',
+    metaDescription:
+      'XS-400+ — 8-stage purification, 50 LPH UTC RO+UV+UF+Alkaline, auto TDS control and UV-protected 7L storage with self-serviceable filters.',
+    keywords: ['xs-400+', '50 lph purifier', 'ro uv uf alkaline', 'self service filters', 'utc purifier'],
+    category: 'ro-uv-uf-alkaline',
+    price: 34900,
+    originalPrice: 34900,
+    image: xs400,
+    gallery: [s_xs_faucet, xs400_utc_kitchen  ,partsPricing_xs400],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description:
+      "Enjoy 8-Stage Purification (50 LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
+    features: [
+      '8-Stage Purification Process',
+      '50 LPH RO + UV + UF + Alkaline Enhancement',
+      'Auto TDS Controller',
+      'Self-Serviceable Filters - Easy Maintenance',
+      'Under-the-Sink/Counter(UTC) (Pressure Tank Needed)',
+      'UV inside the Storage Tank',
+      '7L storage capacity',
+      'RO Membrane - 400 GPD',
+      'RO Booster Pump - 400 GPD',
+      'Electronic Water Level Control Switch',
+      'Automatic Dry Run Protection',
+      'Auto Flush Technology',
+      'Digital Display Indications',
+      'TDS Display',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '50 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Filtration':
+        '3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
+      'Storage Tank': '7 Liters',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions': '15.5" × 8" × 15.5" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
+    installation: true
+  },
+  {
+    id: '20',
+    name: 'S-100+ (UTC)',
+    slug: 's-100-plus',
+    metaTitle: 'S-100+ | 20 LPH UTC RO+UV+UF+Alkaline Purifier | Enpure',
+    metaDescription:
+      'S-100+ — 20 LPH RO + UV + UF + Alkaline, 7L storage, auto TDS control, utc and easy self-service filters. Compact and efficient purifier.',
+    keywords: ['s-100+', '20 lph purifier', 'compact ro purifier', 'utc purifier'],
+    category: 'ro-uv-uf-alkaline',
+    price: 34900,
+    originalPrice: 34900,
+    image: xs400,
+    gallery: [s_xs_faucet, s100_utc_kitchen , partsPricing_s100],
+    colors: ['Black', 'White'],
+    defaultColor: 'Black',
+    youtube: 'https://www.youtube.com/@enpureindia1634',
+    description:
+      "Enjoy 8-Stage Purification (20LPH RO+UV+UF+Alkaline), Auto TDS Control, and UV-Protected 7L Storage with India's First Self-Serviceable Filters for Easy Maintenance.",
+    features: [
+      '8-Stage Purification Process',
+      '20 LPH RO + UV + UF + Alkaline Enhancement',
+      'Auto TDS Controller',
+      'Self-Serviceable Filters - Easy Maintenance',
+      'Under-the-Sink/Counter(UTC) (Pressure Tank Needed)',
+      'UV inside the Storage Tank',
+      '7L storage capacity',
+      'RO Membrane - 100 GPD',
+      'RO Booster Pump - 100 GPD',
+      'Electronic Water Level Control Switch',
+      'Automatic Dry Run Protection',
+      'Auto Flush Technology',
+      'Digital Display Indications',
+      'TDS Display',
+      'Food Grade ABS Body',
+      'High recovery rate of 70% - Water Saving Auto Revive Technology'
+    ],
+    specifications: {
+      'Purification Capacity': '20 L/hour',
+      'Applications': 'Table Top/ Wall Mounting/ Cabinet Fit',
+      'Filtration':
+        '3-in-1 PPC Filter(Sediment + Carbon + Sediment) + RO Membrane + UV Inside the Tank + UF + Post Carbon (Optional) + Alkaline Cartridge',
+      'Storage Tank': '7 Liters',
+      'Alkaline pH Range': '8.5-9 pH',
+      'Input Water Pressure': '10-40 PSI',
+      'Power Consumption': '60 Watts',
+      'Dimensions': '15.5" × 8" × 15.5" ',
+      'Weight': '7.5 kg',
+      'Warranty': '1 + 4* Year Warranty (*T&C Apply)'
+    },
+    warranty: '1 + 4* Year Warranty (*T&C Apply)',
     installation: true
   }
 ];
