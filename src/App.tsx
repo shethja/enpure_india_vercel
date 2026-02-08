@@ -29,6 +29,7 @@ import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 import ScrollToTop from './components/ScrollToTop';
 import usePageView from './analytics/usepageView';
+import StartupPopup from "./components/StartupPopup";
 
 //import "./uploadProducts";
 //import UploadProducts from './pages/UploadProducts';
@@ -43,12 +44,19 @@ function App() {
   //}, []);
   //usePageView();
 
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
   return (
     <AuthProvider>
       <CartProvider>
         <Router>
           <ScrollToTop />
           <PageViewWrapper />
+            {showPopup && <StartupPopup onClose={() => setShowPopup(false)} />}
           <div className="min-h-screen bg-white">
             <Header />
             <main>

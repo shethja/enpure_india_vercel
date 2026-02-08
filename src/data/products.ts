@@ -62,6 +62,9 @@ import s100_utc_kitchen from '../assets/s100_utc_kitchen.png';
 import xs400_utc_kitchen from '../assets/xs400_utc_kitchen.png';
 import katds_kitchen from '../assets/katds_kitchen.png';
 import pro5g_kitchen from '../assets/pro5g_kitchen.png';
+import pro5g_red from '../assets/5g_pro_red.png';
+import pro5g_blue from '../assets/5g_pro_blue.png';
+import pro5g_black from '../assets/5g_pro_black.png';
 import kraft_red_kitchen from '../assets/kraft_red_kitchen.png';
 import kraft_white_kitchen from '../assets/kraft_white_kitchen.png';
 import kraft_black_kitchen from '../assets/kraft_black_kitchen.png'; 
@@ -956,7 +959,7 @@ export const products: Product[] = [
     price: 30900,
     originalPrice: 30900,
     image: pro5g,
-    gallery: [pro5g_kitchen, partsPricing_5gpro],
+    gallery: [pro5g_black, pro5g_blue, pro5g_red, pro5g_kitchen, partsPricing_5gpro],
     colors: ['Black', 'White', 'Red', 'Blue'],
     defaultColor: 'Black',
     youtube: 'https://www.youtube.com/@enpureindia1634',

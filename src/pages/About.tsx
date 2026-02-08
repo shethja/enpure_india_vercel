@@ -7,6 +7,12 @@ import directorMarketing from '../assets/directorMarketing.jpeg';
 import makeInIndia from '../assets/makeInIndia.png';
 import salesHead from '../assets/SalesHead.png';
 import directorOperations from '../assets/directorOperations.png';
+import isi_logo from '../assets/isi-logo.png';
+import iso_logo from '../assets/iso-logo.png';
+import nsf_logo from '../assets/nsf-logo.png';
+import ce_logo from '../assets/ce-logo.png';
+import wqa_logo from '../assets/wqa-logo.png';
+import ilacmra_logo from '../assets/ilacmra-logo.png';
 
 const About = () => {
   const stats = [
@@ -226,28 +232,39 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Certifications & Awards</h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            <div className="text-center p-6 bg-white rounded-2xl shadow-md">
-              <Award className="h-10 w-10 text-blue-900 mx-auto mb-3" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-6 max-w-6xl mx-auto">
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={iso_logo} alt="ISO-Certified" className="mx-auto h-16 mb-3" />
               <h4 className="font-semibold text-gray-900">ISO 9001:2015</h4>
               <p className="text-sm text-gray-600 mt-1">Quality Management</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-md">
-              <Star className="h-10 w-10 text-blue-900 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900">NSF Certified</h4>
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={nsf_logo} alt="NSF-Certified" className="mx-auto h-9 mb-3" />
+              <h4 className="font-semibold text-gray-900">NSF</h4>
+              <h4 className="font-semibold text-gray-900">Certified</h4>
               <p className="text-sm text-gray-600 mt-1">Product Safety</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-md">
-              <CheckCircle className="h-10 w-10 text-blue-900 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900">WQA Gold Seal</h4>
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={wqa_logo} alt="Water Quality Association Certified" className="mx-auto h-8 mb-3" />
+              <h4 className="font-semibold text-gray-900">WQA</h4>
+              <h4 className="font-semibold text-gray-900">Gold Seal</h4>
               <p className="text-sm text-gray-600 mt-1">Water Quality</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-md">
-              <Award className="h-10 w-10 text-blue-900 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900">Best Brand 2023</h4>
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={isi_logo} alt="ISI Certified" className="mx-auto h-16 mb-3" />
+              <h4 className="font-semibold text-gray-900">IS 16240:2023</h4>
               <p className="text-sm text-gray-600 mt-1">Water Purifiers</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-md">
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={ce_logo} alt="CE Certified" className="mx-auto h-10 mb-3" />
+              <h4 className="font-semibold text-gray-900">CE Ceritifed</h4>
+              <p className="text-sm text-gray-600 mt-1">Power Supply</p>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
+              <img src={ilacmra_logo} alt="ilac MRA Certified" className="mx-auto h-16 mb-3" />
+              <h4 className="font-semibold text-gray-900">ilac-MRA Ceritifed</h4>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-2xl shadow-md">
               <img src={makeInIndia} alt="Make in India" className="mx-auto h-12 mb-3" />
               <h4 className="font-semibold text-gray-900">Make in India</h4>
             </div>
