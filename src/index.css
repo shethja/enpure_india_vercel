@@ -347,3 +347,43 @@ section.py-32.bg-slate-900 h2 {
   }
 }
 
+/* Default (mobile + small screens) */
+.popup-responsive {
+  max-width: 85%;
+}
+
+/* 1020px → 1090px */
+@media (min-width: 1020px) and (max-width: 1089px) {
+  .popup-responsive {
+    max-width: 380px;
+  }
+}
+
+/* 1090px → 1170px */
+@media (min-width: 1090px) and (max-width: 1170px) {
+  .popup-responsive {
+    max-width: 420px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1170px) {
+  .popup-responsive {
+    max-width: 448px; /* same as max-w-md */
+  }
+}
+
+/* Default: no offset */
+.popup-offset {
+  margin-top: 0;
+}
+
+/* Nest Hub & similar short-height landscape devices */
+@media (max-height: 650px) and (min-width: 900px) {
+  .popup-offset {
+    margin-top: 50px;
+  }
+}
+
+
+

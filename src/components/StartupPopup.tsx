@@ -12,7 +12,7 @@ const popupImages: string[] = [
   kraft_wp_2plus3
 ];
 
-const DISPLAY_TIME = 2500; // 5 seconds per image
+const DISPLAY_TIME = 3000; // 3 seconds per image
 
 const StartupPopup = ({ onClose }: StartupPopupProps) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -37,8 +37,8 @@ const StartupPopup = ({ onClose }: StartupPopupProps) => {
 
   return (
     //<div className="fixed inset-0 z-50 flex items-center justify-start bg-black/50 pl-4 sm:pl-6">
-    <div className="fixed inset-0 z-50 flex items-center justify-center sm:justify-start bg-black/50 pl-0 sm:pl-6">
-      <div className="relative rounded-2xl max-w-md w-full mx-4 overflow-hidden animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center sm:justify-start bg-black/50 pl-0 sm:pl-4">
+      <div className="relative rounded-2xl popup-responsive popup-offset w-full mx-4 overflow-hidden animate-fadeIn pt-[5px]">
 
         {/* Close button */}
         <button
@@ -49,11 +49,13 @@ const StartupPopup = ({ onClose }: StartupPopupProps) => {
         </button>
 
          {/* Carousel Image */}
+        <div>
         <img
           src={popupImages[currentIndex]}
           alt={`Popup ${currentIndex + 1}`}
-          className="w-full object-cover transition-opacity duration-500"
+          className="w-full object-cover transition-opacity duration-500 rounded-xl"
         />
+        </div>
 
         {/* Indicator dots (optional) */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
