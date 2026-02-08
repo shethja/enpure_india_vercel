@@ -38,7 +38,7 @@ const StartupPopup = ({ onClose }: StartupPopupProps) => {
   return (
     //<div className="fixed inset-0 z-50 flex items-center justify-start bg-black/50 pl-4 sm:pl-6">
     <div className="fixed inset-0 z-50 flex items-center justify-center sm:justify-start bg-black/50 pl-0 sm:pl-4">
-      <div className="relative rounded-2xl popup-responsive popup-offset w-full mx-4 overflow-hidden animate-fadeIn pt-[5px]">
+      <div className="relative rounded-2xl popup-responsive popup-offset w-full mx-4 overflow-hidden animate-fadeIn">
 
         {/* Close button */}
         <button
