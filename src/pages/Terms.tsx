@@ -9,7 +9,7 @@ return (
             <h1 className="text-5xl font-light mb-3">Terms & Conditions</h1>
             <br/>
             <p className="text-blue-500 text-md mb-3">
-            <strong>Last Updated:</strong> October 28, 2025
+            <strong>Last Updated:</strong> April 1, 2026
             </p>
 
             <p className="text-gray-900 leading-relaxed mb-6">
@@ -155,9 +155,36 @@ return (
             
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">6.1 Product Warranty</h3>
             <ul className="list-disc pl-6 mb-4 text-gray-900 space-y-2">
-              <li>All products come with a manufacturer's warranty as specified in the product description</li>
-              <li>Standard warranty period: 1 year for water purifiers and 5 years for pHydrafyt ionizers</li>
-              <li>Warranty covers manufacturing defects and functional issues (Filters for both water purifiers and ionizers not covered under warranty)</li>
+                <li>
+                 All products are covered under a manufacturer’s warranty as detailed in the respective product description.
+                </li>
+                <li>
+                 <strong><em>Enpure</em> Residential Water Purifiers & <em>Kraft</em> Water Purifiers: </strong> 
+                  <br/>
+                  (Applicable only on products sold after <strong>April 1, 2026</strong>).
+                  <br/> <br/>
+                  Covered by a <strong>2 + 3* Year Warranty</strong>, where the 
+                  <strong> 1st and 2nd year includes full product warranty</strong> covering manufacturing and functional defects. 
+                  The subsequent <strong>3 years are service warranty</strong>, during which no service charges apply; 
+                  customers are required to pay only for parts replaced, if any.
+                 <br/> <br/>
+                 <strong>Note: To maintain warranty validity, all repairs and part replacements must be performed exclusively by our authorized technicians using genuine company parts; 
+                         any unauthorized third-party repairs or use of non-company parts will void the warranty. </strong>
+                </li>
+                <li>
+                <strong><em>pHydrafyt</em> Ionizers: </strong> 
+                  Covered by a <strong>comprehensive 5-Years Warranty</strong> on the complete machine against manufacturing and functional defects.
+                </li>
+                <li>
+                <strong><em>Titan</em> Commercial Water Purifiers: </strong> 
+                  Covered by a <strong>comprehensive 1-Year Warranty</strong> on the complete machine against manufacturing and functional defects.
+                </li>
+                {/*
+                <li>
+                 Warranty covers manufacturing defects and functional issues only. 
+                 <strong> Consumables such as filters are not covered under warranty</strong> for both water purifiers and ionizers.
+                </li>
+                */}
             </ul>
 
             <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">6.2 Warranty Exclusions</h3>
